@@ -1,9 +1,9 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://test-oc/');
+define('HTTP_SERVER', 'http://18.188.109.175/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://test-oc/');
+define('HTTPS_SERVER', 'http://18.188.109.175/');
 
 // DIR
 define('DIR_APPLICATION', 'catalog/');
