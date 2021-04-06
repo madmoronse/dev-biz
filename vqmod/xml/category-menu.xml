@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+    <id>Category Menu Pro</id>
+    <version>1.1</version>
+    <vqmver>2.4.1</vqmver>
+    <author>iDiY</author>
+    <file name="admin/model/catalog/category.php">
+        <operation error="skip">
+            <search position="replace"><![CDATA[$sql .= " GROUP BY cp.category_id ORDER BY name";]]></search>
+            <add trim="true"><![CDATA[$sql .= " GROUP BY cp.category_id ORDER BY cp.level, c.sort_order, name";]]></add>
+        </operation>
+        <operation>
+            <search position="replace"><![CDATA[`top` = '" . (isset($data['top']) ? (int)$data['top'] : 0) . "',]]></search>
+                <add trim="true"><![CDATA[`menu_image` = '" . (isset($data['menu_image']) ? (int)$data['menu_image'] : 0) . "', `top` = '" . (isset($data['top']) ? (int)$data['top'] : 0) . "',]]></add>
+        </operation>
+    </file>
+    <file name="admin/controller/catalog/category.php">
+        <operation>
+            <search position="before"><![CDATA[$this->data['entry_top'] = $this->language->get('entry_top');]]></search>
+            <add><![CDATA[        $this->data['entry_menu_image'] = $this->language->get('entry_menu_image');]]></add>
+        </operation>
+        <operation>
+            <search position="before"><![CDATA[if (isset($this->request->post['top'])) {]]></search>
+            <add><![CDATA[        if (isset($this->request->post['menu_image'])) {
+            $this->data['menu_image'] = $this->request->post['menu_image'];
+            } elseif (!empty($category_info)) {
+            $this->data['menu_image'] = $category_info['menu_image'];
+            } else {
+            $this->data['menu_image'] = 1;
+            }
+            ]]></add>
+        </operation>
+    </file>
+    <file name="admin/language/english/catalog/category.php">
+        <operation error="skip">
+            <search position="after"><![CDATA[$_['entry_image']]]></search>
+            <add><![CDATA[$_['entry_menu_image']       = 'Show Image in Category Menu:';]]></add>
+        </operation>
+    </file>
+    <file name="admin/language/russian/catalog/category.php">
+        <operation error="skip">
+            <search position="after"><![CDATA[$_['entry_image']]]></search>
+            <add><![CDATA[$_['entry_menu_image']       = 'Показывать изображение в меню:';]]></add>
+        </operation>
+    </file>
+    <file name="admin/view/template/catalog/category_form.tpl">
+        <operation>
+            <search position="before" offset="1"><![CDATA[<td><?php echo $entry_top; ?></td>]]></search>
+            <add><![CDATA[            <tr>
+            <td><?php echo $entry_menu_image; ?></td>
+            <td><?php if ($menu_image) { ?>
+            <input type="checkbox" name="menu_image" value="1" checked="checked" />
+            <?php } else { ?>
+            <input type="checkbox" name="menu_image" value="1" />
+            <?php } ?></td>
+            </tr>]]></add>
+        </operation>
+    </file>
+    <file name="catalog/controller/common/header.php">
+        <operation error="skip">
+            <search position="replace"><![CDATA[$product_total = $this->model_catalog_product->getTotalProducts($data);]]></search>
+            <add trim="true"><![CDATA[if ($this->config->get('config_product_count')) { $product_total = $this->model_catalog_product->getTotalProducts($data); }]]></add>
+        </operation>
+    </file>
+</modification>

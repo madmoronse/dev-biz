@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/admin/controller/common" />
+      <excludeFolder url="file://$MODULE_DIR$/admin/controller/sale" />
+      <excludeFolder url="file://$MODULE_DIR$/admin/language/russian/common" />
+      <excludeFolder url="file://$MODULE_DIR$/admin/language/russian/sale" />
+      <excludeFolder url="file://$MODULE_DIR$/admin/model/sale" />
+      <excludeFolder url="file://$MODULE_DIR$/catalog/language/russian/account" />
+      <excludeFolder url="file://$MODULE_DIR$/catalog/language/russian/module" />
+      <excludeFolder url="file://$MODULE_DIR$/neos_debug/vendor/codeguy/upload" />
+      <excludeFolder url="file://$MODULE_DIR$/neos_debug/vendor/composer" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+
+  <!-- XML Schema Generated from XML Document on Mon Jun 04 2018 16:48:16 GMT+0700 (Новосибирское стандартное время) -->
+  <!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+  <xs:element name="КоммерческаяИнформация">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Классификатор">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Ид" type="xs:string"></xs:element>
+              <xs:element name="Наименование" type="xs:string"></xs:element>
+              <xs:element name="Владелец">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Ид" type="xs:string"></xs:element>
+                    <xs:element name="Наименование" type="xs:string"></xs:element>
+                    <xs:element name="ПолноеНаименование" type="xs:string"></xs:element>
+                    <xs:element name="ИНН" type="xs:string"></xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Группы" type="grouptype"></xs:element>
+              <xs:element name="Свойства">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Свойство" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Ид" type="xs:string"></xs:element>
+                          <xs:element name="Наименование" type="xs:string"></xs:element>
+                          <xs:element name="ТипЗначений" type="xs:string"></xs:element>
+                          <xs:element name="ВариантыЗначений">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Справочник" maxOccurs="unbounded" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ИдЗначения" type="xs:string"></xs:element>
+                                      <xs:element name="Значение" type="xs:string"></xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Каталог">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Ид" type="xs:string"></xs:element>
+              <xs:element name="ИдКлассификатора" type="xs:string"></xs:element>
+              <xs:element name="Наименование" type="xs:string"></xs:element>
+              <xs:element name="Владелец">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Ид" type="xs:string"></xs:element>
+                    <xs:element name="Наименование" type="xs:string"></xs:element>
+                    <xs:element name="ПолноеНаименование" type="xs:string"></xs:element>
+                    <xs:element name="ИНН" type="xs:string"></xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Товары">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Товар" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Артикул" type="xs:int"></xs:element>
+                          <xs:element name="Наименование" type="xs:string"></xs:element>
+                          <xs:element name="Вес" type="xs:float" minOccurs="0"></xs:element>
+                          <xs:element name="Длина" type="xs:float" minOccurs="0"></xs:element>
+                          <xs:element name="Ширина" type="xs:float" minOccurs="0"></xs:element>
+                          <xs:element name="Высота" type="xs:float" minOccurs="0"></xs:element>
+                          <xs:element name="СписокИсключений" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Исключение" type="xs:string" maxOccurs="unbounded" minOccurs="0"></xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="СписокОписаний" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ОписаниеВФорматеHTML" maxOccurs="unbounded" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Сайт" type="xs:string"></xs:element>
+                                      <xs:element name="Описание" type="xs:string"></xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="ДатаИзменения" type="xs:string"></xs:element>
+                          <xs:element name="ПометкаУдаления" type="xs:string" minOccurs="0"></xs:element>
+                          <xs:element name="Метки">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Метка" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Наименование" type="xs:string"></xs:element>
+                                      <xs:element name="Тип" type="xs:string"></xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Группы" minOccurs="1">                            <!-- TO DO decide if this required or not -->
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Ид" type="xs:string"></xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Картинка" type="xs:string" maxOccurs="unbounded" minOccurs="0"></xs:element>
+                          <xs:element name="Изготовитель" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Ид" type="xs:string"></xs:element>
+                                <xs:element name="Наименование" type="xs:string"></xs:element>
+                                <xs:element name="ОфициальноеНаименование" type="xs:string"></xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="ЗначенияСвойств">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ЗначенияСвойства" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Ид" type="xs:string"></xs:element>
+                                      <xs:element name="Значение" type="xs:string"></xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="ЗначенияРеквизитов">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ЗначениеРеквизита" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Наименование" type="xs:string" minOccurs="0"></xs:element>
+                                      <xs:element name="Значение" type="xs:string" minOccurs="0"></xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="ОбновлениеОстатков" type="xs:string"></xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="СодержитТолькоИзменения" type="xs:string"></xs:attribute>
+            <xs:attribute name="УдалитьСуществующиеПродукты" type="xs:string"></xs:attribute>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="ВерсияСхемы" type="xs:double"></xs:attribute>
+      <xs:attribute name="ДатаФормирования" type="xs:dateTime"></xs:attribute>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="grouptype">
+    <xs:sequence>
+      <xs:element name="Группа" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Ид" type="xs:string"></xs:element>
+            <xs:element name="Наименование" type="xs:string"></xs:element>
+            <xs:element name="Группы" minOccurs="0" maxOccurs="unbounded" type="grouptype"></xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

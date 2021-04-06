@@ -1,0 +1,865 @@
+* {padding:0;margin:0;}
+
+body {
+	margin:0;
+	padding:0;
+	color:#361209;
+	font-size:20px;
+	font-family:'Myriad Pro';
+	font-weight:300;
+
+}
+
+.clear {clear:both;}
+.container {width:100%;}
+ul {list-style: none;}
+a {text-decoration:none;}
+.fl {float:left;}
+.fr {float:right;}
+.cntr {margin:0 auto;}
+.center {}
+
+.dur1delay05 {
+	-webkit-animation-duration: 1s;
+	-moz-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-delay: 0.5s;
+	-moz-animation-delay: 0.5s;
+	animation-delay: 0.5s;
+}
+
+.dur3delay05 {
+
+	-webkit-animation-duration: 3s;
+	-moz-animation-duration: 3s;
+	animation-duration: 3s;
+	-webkit-animation-delay: 0.5s;
+	-moz-animation-delay: 0.5s;
+	animation-delay: 0.5s;
+
+}
+
+.dur5delay1 {
+	-webkit-animation-duration: 5s;
+	-moz-animation-duration: 5s;
+	animation-duration: 5s;
+	-webkit-animation-delay: 1s;
+	-moz-animation-delay: 1s;
+	animation-delay: 1s;
+}
+
+
+
+header {width:100%;text-align:center;}
+
+header .mainmenu {max-width:100%;min-width:287px;backgorund:#f7f7f7;margin:0 auto;padding:20px 0;}
+header .mainmenu H1 {font-family:'Bebas';font-weight:100;margin-bottom:20px;}
+
+header .mainmenu a {padding:3px 20px;font-size:23px;font-weight:400;display:inline-block;vertical-align: middle;text-align:center;color:#333;font-family:'BebasNeueRegular';}
+header .mainmenu a i {font-size:30px;}
+header .mainmenu a:hover {
+	background:#2754eb;color:#fff;
+	-moz-transition: 0.5s all ease;
+	-o-transition: 0.5s all ease;
+	-webkit-transition: 0.5s all ease;
+	transition: 0.5s all ease;
+}
+
+header .topline {max-width:100%;min-width:287px;background:#2b3f7e;color:#fff;position:relative;}
+header .topline .topnav {max-width:1180px;min-width:287px;margin:0 auto;position:relative;}
+header .topline .topnav a {color:#fff;text-decoration:none;padding:10px 20px;font-size:15px;display:inline-block;text-align:center;font-weight:300;font-family:Bebas;font-weight:300;}
+header .topline .topnav a.current {background:#fff;color:#008bfb;}
+header .topline .topnav a.shopcart {font-size:25px;position:absolute;top:-5px;right:0px;}
+
+
+
+.myButton {
+    background-color: #e72020;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 25px;
+    padding: 16px 16px;
+    font-weight: 300;
+    text-decoration: none;
+    display:block;
+    text-align:center;
+    font-family:Bebas;font-weight:300;
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.39);
+    border-color:#e72020;
+}
+
+
+.copy_btn {
+    background-color: #f9bcc2;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #333;
+    font-size: 13px;
+    padding: 2px 5px;
+    font-weight: 300;
+    text-decoration: none;
+    display:block;
+    text-align:center;
+    font-family:'Open Sans';
+    font-weight:100;
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.39);
+    border-color:#f9bcc2;
+    width:70px!important;
+}
+
+a.copy_btn {width:180px!important;}
+.forceattach {
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background:#e72020;color:#fff;padding:5px 10px;cursor:pointer;
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.39);
+    border-color:#f9bcc2;
+    font-size:12px;
+
+}
+
+.modal_main {width:400px;font-weight:400;color:#fff;background-color:red;}
+.emptycart {
+	width:300px;
+	font-size: 25px;
+	padding: 8px 0px;
+	margin-top:15px;
+	background: #e72020;
+	text-transform:uppercase;
+	font-weight:600;
+
+}
+
+
+
+.basketstep1 {width:900px;margin:50px auto 0;padding:20px;}
+.basketstep1 H2 {font-weight:100;font-size:40px;margin-bottom:50px;color:#333;font-family:'BebasNeueRegular';font-weight:300;}
+.basketstep1 .orderform {float:left;width:350px;}
+.basketstep1 .orderform .orddata {margin:0px 0px 30px;} 
+.basketstep1 .orderform .orddata input[type=text] {
+	padding: 8px 13px 7px;
+	font-family: 'Myriad Pro';
+	font-weight:300;
+	font-size:14px;
+	width:300px;
+	background: #f7f7f7;
+	border: 1px solid #E5E5E5;
+	border-radius: 2px;
+}
+.basketstep1 .orderform .orddata p {font-size:12px;margin-top:5px;color:#888;padding-left:3px;}
+.basketstep1 .orderform .orddata textarea {
+	padding:5px 10px;font-family: 'Myriad Pro';font-weight:300;font-size:14px;width:305px;height:125px;
+	background: #f7f7f7;
+	border: 1px solid #E5E5E5;
+	border-radius: 2px;
+}
+
+.basketstep1 .orderview {width:510px;float:right;border:1px solid #E5E5E5;padding:15px;}
+.basketstep1 .orderview .orderlist {height:200px;overflow-y:scroll;}
+.basketstep1 .orderview .orderlist .item {margin-bottom:20px;}
+.basketstep1 .orderview .orderlist .item p {font-size:14px;line-height:23px;}
+.basketstep1 .orderview .orderlist .item .itemimg {float:left;width:66px;height:66px;overflow:hidden;margin-right:10px;}
+.basketstep1 .orderview .orderlist .item .itemimg img {height:66px;}
+.basketstep1 .orderview .orderlist .item .itemname {float:left;width:260px;margin-right:10px;}
+.basketstep1 .orderview .orderlist .item .itemname span {font-size:12px;color:#555;display:block;line-height:15px;}
+.basketstep1 .orderview .orderlist .item .itemquant {float:left;width:50px;margin-right:10px;text-align:center;}
+.basketstep1 .orderview .orderlist .item .itemprice {float:left;width:70px;text-align:center;}
+
+
+.basketstep1 .orderview .ordersumm {padding:30px 20px;border-top:1px solid #E5E5E5;text-align:right;margin-top:30px;}
+.basketstep1 .orderview .ordersumm p {}
+.basketstep1 .orderview .ordersumm p span {font-family:Bebas;font-weight:300;font-size:30px;}
+.basketstep1 .orderview .ordersumm H4 {font-size:18px;font-weight:600;margin-top:10px;font-family:Bebas;color:#ff5555;}
+.basketstep1 .orderview .ordersumm H4 i {
+	margin-right:10px;
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+}
+
+
+
+
+
+/* содержимое корзины НАЧАЛО */
+
+.shoppingcart {width:100%;max-width:800px;margin:100px auto 0;text-align:center;}
+
+
+
+
+
+.shoppingcart .orderview {
+	max-width:800px;
+	min-width:315px;
+	/*display:inline-block;
+	vertical-align: top;*/
+	text-align:left;
+	margin:20px;
+
+}
+
+
+.shoppingcart .orderview H2 {text-align:left;font-weight:100;font-size:40px;margin-bottom:50px;color:#333;font-family:'BebasNeueRegular';font-weight:300;}
+.shoppingcart .orderview H6 {text-align:left;font-size:14px;line-height:40px;color:#555;font-weight:100;font-family:'Open Sans';}
+
+
+.shoppingcart .orderview table {width:100%;}
+
+/*.shoppingcart .orderview table tr:nth-child(odd){background: #f7f7f7;}*/
+
+.shoppingcart .orderview table tr {border-bottom:1px #aaa solid;}
+.shoppingcart .orderview table td {vertical-align:top;}
+
+.shoppingcart .orderview .item {margin-bottom:20px;}
+.shoppingcart .orderview .item.hide {display:none;}
+
+.shoppingcart .orderview .item p {font-size:14px;line-height:23px;}
+
+.shoppingcart .orderview .item .itemimg {width:66px;height:66px;padding:0 0px 0 0px;overflow:hidden;margin-right:10px;margin-bottom:10px;}
+.shoppingcart .orderview .item .itemimg img {height:66px;}
+
+.shoppingcart .orderview .item .itemname {margin-right:10px;max-width:400px;}
+.shoppingcart .orderview .item .itemname span {font-size:12px;color:#555;display:block;line-height:15px;}
+
+.shoppingcart .orderview .item .itemquant {margin-right:10px;text-align:center;min-width:50px;}
+.shoppingcart .orderview .item .itemquant span {cursor:pointer;}
+.shoppingcart .orderview .item .itemquant span:hover {color:#ff0000;}
+.shoppingcart .orderview .item .itemquant input[type=text] {width:10px;border:none;font-family:'Myriad Pro';text-align:center;}
+
+.shoppingcart .orderview .item .itemprice {margin-right:10px;text-align:center;min-width:70px;}
+
+
+.shoppingcart .orderview .item .itemdel {text-align:center;}
+
+.shoppingcart .orderview .item .itemdel a {
+	color:#888;
+	cursor:pointer;
+}
+.shoppingcart .orderview .item .itemdel a:hover {color:#ff0000;}
+
+.shoppingcart .orderview .item .itemdel span {
+	color:#888;
+	cursor:pointer;
+}
+.shoppingcart .orderview .item .itemdel span:hover {color:#ff0000;}
+
+.shoppingcart .orderview .item .itemdel .delitemfromcart {font-size:14px;line-height:23px;}
+
+.shoppingcart .orderview .item .itemdel input[type=radio] {display:none;}
+
+.shoppingcart .orderview .item .itemdel label {
+	color:#888;
+	cursor:pointer;
+}
+
+.shoppingcart .orderview .item .itemdel label:hover {
+	color:#ff0000;
+	-moz-transition: 0.5s all ease;
+	-o-transition: 0.5s all ease;
+	-webkit-transition: 0.5s all ease;
+	transition: 0.5s all ease;
+}
+
+
+.total-amount {	margin:20px;text-align:right;border-top:1px #E5E5E5 solid;padding-top:20px;}
+.total-amount .myButton {
+	width:200px;
+	font-size: 20px;
+	padding: 8px 0px;
+	float:right;
+	margin-top:20px;
+	background: #e72020;
+	text-transform:uppercase;
+	font-weight:600;
+}
+
+.total-amount p {font-weight:100;color:#888;}
+.total-amount p span {font-weight:600;font-family:Bebas;font-size:30px;color:#333;}
+.total-amount .shipcomment {height:40px;margin-top:10px;}
+.total-amount .shipcomment  H4 {font-size:20px;line-height:20px;font-weight:600;font-family:Bebas;color:#ff5555;}
+.total-amount .shipcomment  H4 i {
+	margin-right:10px;
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+}
+
+
+.summaryview {
+	display:inline-block;
+	vertical-align: middle;
+
+}
+
+.shoppingcart .ordersummary {
+	display:inline-block;
+	vertical-align: top;
+	border:1px solid #E5E5E5;
+	font-family:Bebas;
+	font-weight:300;
+	min-height:153px;
+	min-width:345px;
+	margin:20px;
+}
+
+.shoppingcart .ordersummary .ordersummary_header {background:#eee;padding:10px 16px;}
+
+.shoppingcart .ordersummary .ordersummary_header H4 {font-size:18px;font-weight:600;text-transform:uppercase;text-align:left;}
+.shoppingcart .ordersummary .ordersummary_body {padding:10px 16px;}
+.shoppingcart .ordersummary .ordersummary_body .row {padding:10px 0;}
+.shoppingcart .ordersummary .ordersummary_body .row p {font-size:15px;font-family:'Myriad Pro';}
+.shoppingcart .ordersummary .ordersummary_body .row p span {font-weight:600;font-family:Bebas;font-size:25px;}
+.shoppingcart .ordersummary .ordersummary_body .row p span#total_summ {}
+.shoppingcart .ordersummary .ordersummary_body .row .lside {float:left;text-align:left;}
+.shoppingcart .ordersummary .ordersummary_body .row .rside {float:right;text-align:right;}
+
+
+
+.shoppingcart .ordersummary .ordersummary_body .row H4 {font-size:20px;font-weight:600;margin-top:10px;font-family:Bebas;color:#ff5555;}
+.shoppingcart .ordersummary .ordersummary_body .row H4 i {
+	margin-right:10px;
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+}
+
+
+
+
+.shoppingcart .summaryview .myButton {
+	width:345px;
+	font-size: 20px;
+	padding: 8px 0px;
+	margin:15px auto;
+	background: #e72020;
+	text-transform:uppercase;
+	font-weight:600;
+}
+
+
+.shoppingcart .orderview .statica {}
+.shoppingcart .orderview .statica p {font-size:15px;color:#555;font-weight:200;line-height:25px;margin-bottom:20px;font-family:'Open Sans';}
+
+.shoppingcart .process_form {margin-top:50px;background: #fff2f2;padding:30px;}
+.shoppingcart .process_form p {font-family:'Open Sans';font-size:14px;margin-bottom:20px;}
+
+.shoppingcart .process_form .chooser {margin-bottom:20px;}
+
+.shoppingcart .process_form input[type=radio] {cursor:pointer;}
+
+.shoppingcart .process_form input[type=radio]:checked + label {
+    color: #ee0000;
+}
+
+.shoppingcart .process_form label {
+	padding:7px;
+
+	cursor:pointer;
+	font-size:18px;
+	text-align:center;
+	font-family:Bebas;
+}
+
+
+.shoppingcart .process_form .myButton {
+	width:200px;
+	font-size: 20px;
+	padding: 10px 0px;
+	margin-top:30px;
+	background: #e72020;
+	font-weight:600;
+	text-transform:uppercase;
+	border: 1px solid #AC1E0E;
+	font-family:Bebas;
+}
+
+.shoppingcart .process_order {
+	margin-top:0px;
+	padding:20px;
+	font-family:'Open Sans';
+	font-size:14px;
+}
+
+.shoppingcart .process_order_header {background:#e5e5e5;border-top:1px solid #888;border-bottom:1px solid #888;padding:20px;margin-top:50px;}
+
+/* содержимое корзины КОНЕЦ */
+
+/* оверлей ошибки НАЧАЛО */
+
+.errorwindow {width:300px;position:relative;display:none;background:#fff;margin-top:50px;padding:20px;}
+.errorwindow .closebuttn {position:absolute;top:10px;right:20px;font-size:16px;font-family:'BebasNeue-Light';}
+.errorwindow .errormessage {width:250px;margin:0px auto 0;font-size:15px;font-family:'Myriad Pro';line-height:25px;text-align:center;}
+.errorwindow .myButton {
+	font-size: 20px;
+	padding: 8px 0px;
+	margin:15px auto 0;
+	background: #e72020;
+	text-transform:uppercase;
+	font-weight:600;
+	width:100px;
+}
+
+/* оверлей ошибки КОНЕЦ */
+
+
+
+/* хзчо НАЧАЛО */
+.orderdata {width:800px;margin:30px auto;padding-bottom:20px;border-bottom:1px #ddd solid;}
+.orderdata H4 {font-weight:400;font-size:25px;margin-bottom:15px;}
+.orderdata p {font-size:20px;}
+.orderdata .person {margin-bottom:20px;}
+.orderdata .summ {}
+.orderdata .summ strong {font-weight:400;}
+.orderdata .addr {margin-bottom:20px;}
+/* хзчо КОНЕЦ */
+
+
+
+.basketbttn {width:900px;margin:0px auto;text-align:right;}
+
+.basketbttn p {font-size:14px;line-height:20px;text-align:right;margin-top:20px;font-weight:400;color:#555;}
+.basketbttn p .helpbtn {
+	background:#eee;padding:2px 7px;
+	background: #f7f7f7;
+	border: 1px solid #E5E5E5;
+	border-radius: 2px;
+	margin-right:2px;
+	cursor:pointer;
+}
+.basketbttn .myButton {
+	width:200px;
+	font-size: 20px;
+	padding: 10px 0px;
+	margin-top:30px;
+	float:right;
+	background: #e72020;
+	font-weight:600;
+	text-transform:uppercase;
+	border: 1px solid #AC1E0E;
+	font-family:Bebas;
+}
+
+.basketbttn .back {
+	float:right;
+	font-size: 14px;
+	padding: 12px 0px;
+	margin-top:30px;
+	margin-right:30px;
+	color:#888;
+}
+
+.basketbttn .error_message {
+	background-color:#fadadd; 
+	padding:20px;
+	margin-top:20px;
+	font-size:20px;
+	line-height:20px;
+	font-family:Bebas;
+	visibility:hidden;
+	height:20px;
+}
+
+.basketbttn .error_message.on {visibility:visible;}
+
+
+
+
+
+footer {width:100%;padding:100px 0 100px;background:#2b3f7e;color:#fff;}
+
+footer .items {margin:0 auto;text-align:center;}
+
+footer .items H4 {font-size:40px;text-align:center;margin:0px auto 50px;font-weight:300;}
+
+footer .items .box {
+	text-align:center;
+	color:#fff;
+}
+
+footer .items .box p {font-size:30px;font-family:Bebas;line-height:50px;}
+footer .items .box p a.vk {color:#fff;text-decoration:none;font-size:30px;padding:0px 10px;}
+footer .items .box p .logo {width:240px;}
+
+footer .items .box .navtab {margin-top:50px;text-align:center;}
+footer .items .box .navtab a {color:#fff;padding:15px;line-height:30px;font-size:15px;display:inline-block;vertical-align: top;font-family:'Open Sans';}
+footer .items .box .navtab a:hover {text-decoration:underline;}
+
+
+
+
+
+
+
+.table {width:100%;margin:50px auto 0;text-align: left;font-size:14px;font-weight:300;font-family: 'Open Sans';font-size:13px;}
+.table p {text-align:left;font-size:16px;padding:0 0 10px 20px;font-size:14px;}
+.table p b {color:red;font-size:16px;}
+.table H4 {font-weight:400;font-size:25px;margin-bottom:20px;color:#333;}
+.table table {width: 100%;z-index:800;}
+.table td {padding:10px;}
+.table td.red {color:red;font-weight:400;}
+.table td.green {color:green;font-weight:300;}
+.table td.black {font-weight:100;}
+.table th {padding:10px 10px;font-family:Bebas;font-size:18px;font-weight:100;color:#333;}
+.table tr:nth-child(odd){background: #f7f7f7;}
+.table td pre {font-size:20px;font-weight:300;line-height:30px;}
+.table td b {font-weight:400;font-size:20px;}
+.table td span {font-size:10px;width:120px;}
+
+.table .myButton {
+	width:230px;
+	font-size: 18px;
+	padding: 10px 0px;
+	margin:10px 0 40px 0px;
+	
+}
+
+
+
+
+
+.cabinet_menu {min-width:280px;padding:0px 20px 0px 20px;margin:50px auto 0;max-width:1010px;border-bottom:1px #969696 solid;text-align:right;position:relative;}
+
+.cabinet_menu a {
+	color:#555;padding:10px 10px;
+	font-family: 'Open Sans';
+	font-size:12px;
+	text-decoration:none;
+	margin:0;
+	display:inline-block;
+	z-index:10;
+}
+
+.cabinet_menu a:hover {background:#e5e5e5;}
+.cabinet_menu a.current {background:#969696;color:#fff;z-index:10;}
+.cabinet_menu span {position:absolute;top:10px;left:20px;z-index:0;}
+
+.cabinet_orders {
+
+	min-width:280px;
+	padding:0px 20px 0px 20px;
+	margin:0px auto 0;
+	max-width:1050px;
+	min-height:587px;
+}
+
+.cabinet_orders table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.cabinet_orders table tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.cabinet_orders table tr:first-child {
+    background: #f7f7f7;
+    height: 54px;
+    border-bottom: 1px solid #9e9e9e;
+
+}
+
+.cabinet_orders table .col-100 {
+    width: 100px;
+    text-align:center;
+}
+
+.cabinet_orders table .col-120 {
+    width: 120px;
+    text-align:center;
+}
+
+.cabinet_orders table tr {
+    border-bottom: 1px solid #efefef;
+    cursor: pointer;
+}
+
+.cabinet_orders table tr.item:hover {
+    background: #efefef;
+}
+
+.cabinet_orders table tr.item td {
+    vertical-align: middle;
+    height: 50px;
+}
+
+.cabinet_orders td {padding:10px;font-family:'Open Sans';font-weight:100;font-size:14px;}
+
+.cabinet_orders th {padding:20px 10px;font-family:'Open Sans';font-size:14px;font-weight:100;color:#333;}
+.cabinet_orders th.status {text-align:left;}
+
+
+
+.cabinet_discount {min-width:280px;padding:20px;margin:0px auto 0;max-width:1040px;font-family:'Open Sans';font-weight:100;font-size:14px;min-height:547px;}
+.cabinet_discount p {line-height:16px;margin-bottom:20px;}
+
+.signform {min-width:280px;padding:20px;margin:50px auto 0;max-width:350px;background:#fff;}
+.signform.lk {margin:0px auto 0;}
+.signform.modal {padding:20px;margin:0;}
+.signform.modal1 {padding:20px;margin:0;}
+.signform H2 {font-family:'BebasNeueRegular';font-weight:100;font-size:40px;text-align:center;}
+.signform H3 {font-family:'BebasNeueRegular';font-weight:100;font-size:24px;text-align:left;}
+
+.signform .form_block {min-width:250px;max-width:350px;margin-top:20px;text-align:center;}
+.signform .form_block p {text-align:left;margin-bottom:20px;font-family:'Open Sans';color:#333;font-size:14px;font-weight:100;}
+
+.signform .form_block .help {font-family:'Open Sans';color:#888;font-size:10px;margin-top:-15px;}
+.signform .form_block .payinfo {font-family:'Open Sans';color:#555;font-size:14px;}
+.signform .form_block p {color:#888;}
+.signform .form_block a {color:#888;font-size:13px;padding:0 20px;font-weight:100;font-family:'Open Sans';}
+
+.signform input[type=text], .signform input[type=password] {
+	min-width:250px;
+	max-width:330px;
+	width:94%;
+	padding: 8px 10px 7px;
+	font-family: 'Open Sans';
+	font-weight:100;
+	font-size:14px;
+	background: #f7f7f7;
+	border: 1px solid #E5E5E5;
+	border-radius: 2px;
+	margin-bottom:17px;
+	color:#555;
+}
+
+.signform input[type=text].readonly {
+	color:#bbb;
+}
+
+.signform label {text-align:left;font-size:14px;font-family:'Open Sans';font-weight:200;display:block;margin-bottom:3px;}
+
+.signform .form_block .myButton {
+
+	min-width:250px;
+	max-width:250px;
+	font-size: 20px;
+	padding: 8px 0px;
+	background: #e72020;
+	text-transform:uppercase;
+	font-weight:600;
+	margin:20px auto;
+}
+
+
+.signform .form_block .error_message, .signform .form_block .error_message1 {
+	background-color:#fadadd; 
+	padding:20px;
+	margin-top:20px;
+	font-size:20px;
+	line-height:20px;
+	font-family:Bebas;
+	visibility:hidden;
+	height:20px;
+}
+
+.signform .form_block .error_message.on, .signform .form_block .error_message1.on {visibility:visible;}
+
+
+.modalwin {}
+
+
+.acc_orders {min-width:280px;padding:0px 20px 0px 20px;margin:0px auto 0;max-width:1050px;min-height:587px;display:table;font-family:'Open Sans';font-size:14px;}
+
+.acc_orders .header {background:#e5e5e5;display:table-header-group;width:100%;padding:20px 0;border-bottom:1px #888 solid;border-top:1px #888 solid;}
+
+.acc_orders .row {display:table-row;width:100%;font-size:12px;padding:20px 0;bodrer-bottom:#1px #f7f7f7 solid;}
+.acc_orders .cell {display:table-cell;}
+
+.acc_orders .cell.id {max-width:100px;text-align:center;}
+.acc_orders .cell.date {max-width:100px;text-align:center;}
+.acc_orders .cell.status {max-width:500px;text-align:left;}
+.acc_orders .cell.summ {max-width:100px;text-align:center;}
+
+
+
+.paging {min-width:320px;max-width:100%;margin:0 auto;text-align:center;padding:50px 0;}
+
+.paging a {
+	padding:7px;
+	cursor:pointer;
+	font-size:20px;
+	text-align:center;
+	margin:0 10px;
+	color:#555;
+	font-family:Bebas;
+}
+
+.paging a.current {
+	color: #ff0000;
+}
+
+.paging a:hover {
+	background:#2754eb;color:#fff;
+	-moz-transition: 0.5s all ease;
+	-o-transition: 0.5s all ease;
+	-webkit-transition: 0.5s all ease;
+	transition: 0.5s all ease;
+}
+
+
+@font-face {
+    font-family: 'Kelson Sans';
+    src: local('Kelson Sans RU'), local('KelsonSans-RegularRU'), url('/fonts/kelson_sans_regular_ru.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Kelson Sans';
+    src: local('Kelson Sans RU'), local('KelsonSans-BoldRU'), url('/fonts/kelson_sans_bold_ru.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Kelson Sans';
+    src: local('Kelson Sans RU'), local('KelsonSans-LightRU'), url('/fonts/kelson_sans_light_ru.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Bebas';
+  src: url('/fonts/BebasNeueBold.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/BebasNeueBold.woff') format('woff'),
+       url('/fonts/BebasNeueBold.ttf')  format('truetype'),
+       url('/fonts/BebasNeueBold.svg#BebasNeueBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BebasNeueBook';
+  src: url('/fonts/BebasNeueBook.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/BebasNeueBook.woff') format('woff'),
+       url('/fonts/BebasNeueBook.ttf')  format('truetype'),
+       url('/fonts/BebasNeueBook.svg#BebasNeueBook') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'BebasNeue-Light';
+  src: url('/fonts/BebasNeue-Light.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/BebasNeue-Light.woff') format('woff'),
+       url('/fonts/BebasNeue-Light.ttf')  format('truetype'),
+       url('/fonts/BebasNeue-Light.svg#BebasNeue-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'BebasNeueRegular';
+  src: url('/fonts/BebasNeueRegular.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/BebasNeueRegular.woff') format('woff'),
+       url('/fonts/BebasNeueRegular.ttf')  format('truetype'),
+       url('/fonts/BebasNeueRegular.svg#BebasNeueRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'BebasNeue-Thin';
+  src: url('/fonts/BebasNeue-Thin.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/BebasNeue-Thin.woff') format('woff'),
+       url('/fonts/BebasNeue-Thin.ttf')  format('truetype'),
+       url('/fonts/BebasNeue-Thin.svg#BebasNeue-Thin') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url('/fonts/MyriadPro-Regular.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/MyriadPro-Regular.woff') format('woff'),
+       url('/fonts/MyriadPro-Regular.ttf')  format('truetype'),
+       url('/fonts/MyriadPro-Regular.svg#MyriadPro-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+/* анимированные фоны */
+
+/* подвеска */
+
+
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans Light'), local('OpenSans-Light'), url('/fonts/opensanslight.woff2') format('woff2'), url('/fonts/opensanslight.woff') format('woff'), url('/fonts/opensanslight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans Light Italic'), local('OpenSansLight-Italic'), url('/fonts/opensanslightitalic.woff2') format('woff2'), url('/fonts/opensanslightitalic.woff') format('woff'), url('/fonts/opensanslightitalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans'), local('OpenSans'), url('/fonts/opensans.woff2') format('woff2'), url('/fonts/opensans.woff') format('woff'), url('/fonts/opensans.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans Italic'), local('OpenSans-Italic'), url('/fonts/opensansitalic.woff2') format('woff2'), url('/fonts/opensansitalic.woff') format('woff'), url('/fonts/opensansitalic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url('/fonts/opensanssemibold.woff2') format('woff2'), url('/fonts/opensanssemibold.woff') format('woff'), url('/fonts/opensanssemibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans Semibold Italic'), local('OpenSans-SemiboldItalic'), url('/fonts/opensanssemibolditalic.woff2') format('woff2'), url('/fonts/opensanssemibolditalic.woff') format('woff'), url('/fonts/opensanssemibolditalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans Bold'), local('OpenSans-Bold'), url('/fonts/opensansbold.woff2') format('woff2'), url('/fonts/opensansbold.woff') format('woff'), url('/fonts/opensansbold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url('/fonts/opensansbolditalic.woff2') format('woff2'), url('/fonts/opensansbolditalic.woff') format('woff'), url('/fonts/opensansbolditalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans Extrabold'), local('OpenSans-Extrabold'), url('/fonts/opensansextrabold.woff2') format('woff2'), url('/fonts/opensansextrabold.woff') format('woff'), url('/fonts/opensansextrabold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans Extrabold Italic'), local('OpenSans-ExtraboldItalic'), url('/fonts/opensansextrabolditalic.woff2') format('woff2'), url('/fonts/opensansextrabolditalic.woff') format('woff'), url('/fonts/opensansextrabolditalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+
+
+
+
+
+
+
+ 

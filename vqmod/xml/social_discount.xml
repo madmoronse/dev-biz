@@ -1,0 +1,649 @@
+<modification>
+	<id>Social Discount</id>
+	<version>2.2</version>
+	<vqmver>2.0.0</vqmver>
+	<author>Gennady Telegin, support@itxd.ru</author>
+
+	<file name="catalog/view/theme/*/template/product/product.tpl">
+		<operation>
+			<search position="replace"><![CDATA[
+			<?php echo $header; ?>
+			]]></search>
+			<add><![CDATA[
+			<?php echo $header; ?>
+			<script>
+			<?php if ($social_discount_fb_like_enabled): ?>
+			 window.fbAsyncInit = function() {
+				FB.init({
+				  status     : true, // check login status
+				  cookie     : true, // enable cookies to allow the server to access the session
+				  xfbml      : true  // parse XFBML
+				});
+
+				//Facebook tracking
+				FB.Event.subscribe('edge.create', function(targetUrl) {
+					sd_userAction('fb','like');
+				});
+				
+				FB.Event.subscribe('edge.remove', function(targetUrl) {
+					sd_userAction('fb','unlike');
+				});
+			  };
+			<?php endif; ?>
+			</script>
+			]]></add>
+		</operation>
+		<operation>
+			<search position="before"><![CDATA[
+			<?php echo $footer; ?>
+			]]></search>
+			<add><![CDATA[
+<script>
+<?php if ($social_discount_vk_like_enabled): ?>
+if ('undefined' != typeof VK) {
+	VK.Observer.subscribe("widgets.like.liked", function () {
+		sd_userAction('vk','like');
+	});
+	VK.Observer.subscribe("widgets.like.unliked", function () {
+		sd_userAction('vk','unlike');
+	});
+}
+<?php endif; // vk_like ?>
+<?php if ($social_discount_vk_share_enabled): ?>
+if ('undefined' != typeof VK) {
+	VK.Observer.subscribe("widgets.like.shared", function () {
+		sd_userAction('vk','share');
+	});
+	VK.Observer.subscribe("widgets.like.unpublished", function () {
+		sd_userAction('vk','unpublish');
+	});
+}
+<?php endif; ?>
+
+<?php if ($social_discount_gp_like_enabled): ?>
+function plusone_share(data) {
+	console.log(data.state);
+	
+	if (data.state == 'on') {
+		sd_userAction('gp','like');
+	} else {
+		sd_userAction('gp','unlike');
+	}
+}
+<?php endif; ?>
+
+<?php if ($social_discount_mm_like_enabled): ?>
+if ('undefined' != typeof mailru) {
+	mailru.loader.require('api', function(){
+	   mailru.events.listen(mailru.plugin.events.liked, function(result){
+		   /* todo - save ID of liked recored */
+		   <?php if ($social_discount_mm_like_enabled): ?>
+		   if (result.type == 'mm') {
+				sd_userAction('mm','like');
+		   }
+		   <?php endif; ?>
+	   });
+
+	   mailru.events.listen(mailru.plugin.events.unliked, function(result){
+		   <?php if ($social_discount_mm_like_enabled): ?>
+		   if (result.type == 'mm') {
+				sd_userAction('mm','unlike');
+		   }
+		   <?php endif; ?>
+	   });
+	});
+}
+<?php endif; ?>
+
+<?php if ($social_discount_ok_like_enabled): ?>
+(function(w){
+  function onShare(e) {
+    var args = e.data.split("$");
+    if (args[0] == "ok_shared") {
+      sd_userAction('ok','like');
+    }
+  }
+  
+  if (w.addEventListener) {
+    w.addEventListener('message', onShare, false);
+  } else {
+    w.attachEvent('onmessage', onShare);
+  }
+}(window));
+<?php endif; ?>
+
+<?php if ($social_discount_tw_like_enabled): ?>
+if ('undefined' != typeof twttr) {
+	twttr.ready(function (twttr) {
+		twttr.events.bind('tweet', function(event) {
+			sd_userAction('tw','like');
+		});
+	});
+}
+<?php endif; ?>
+
+<?php if ($social_discount_integration_addthis_enabled): /*     AddThis Integration   */ ?>
+function addThisReady(evt) {
+	<?php if ($social_discount_vk_share_enabled): ?>
+	$('.addthis_button_vk').click(function() {
+		sd_userAction('vk','share');
+	});
+	<?php endif; ?>
+	<?php if ($social_discount_fb_like_enabled): ?>
+	$('.addthis_button_facebook').click(function() {
+		sd_userAction('fb','like');
+	});
+	<?php endif; ?>
+	<?php if ($social_discount_gp_like_enabled): ?>
+	$('.addthis_button_google_plusone').click(function() {
+		sd_userAction('gp','like');
+	});
+	<?php endif; ?>
+	
+	<?php if ($social_discount_mm_like_enabled): ?>
+	$('.addthis_button_mymailru').click(function() {
+		sd_userAction('mm','like');
+	});
+	<?php endif; ?>
+	<?php if ($social_discount_ok_like_enabled): ?>
+	$('.addthis_button_odnoklassniki_ru').click(function() {
+		sd_userAction('ok','like');
+	});
+	<?php endif; ?>
+	
+	<?php if ($social_discount_tw_like_enabled): ?>
+	$('.addthis_button_twitter').click(function() {
+		sd_userAction('tw','like');
+	});
+	<?php endif; ?>
+}
+
+// Listen for the share event
+if ('undefined' != typeof addthis) {
+	addthis.addEventListener('addthis.ready', addThisReady);
+}
+<?php endif; ?>
+
+<?php if ($social_discount_integration_pluso_enabled): /*     Pluso Integration   */ ?>
+function pluso_ready() {
+	<?php if ($social_discount_vk_share_enabled): ?>
+	$('.pluso-vkontakte').click(function() {
+		sd_userAction('vk','share');
+	});
+	<?php endif; ?>
+	<?php if ($social_discount_fb_like_enabled): ?>
+	$('.pluso-facebook').click(function() {
+		sd_userAction('fb','like');
+	});
+	<?php endif; ?>
+	<?php if ($social_discount_gp_like_enabled): ?>
+	$('.pluso-google').click(function() {
+		sd_userAction('gp','like');
+	});
+	<?php endif; ?>
+	
+	<?php if ($social_discount_mm_like_enabled): ?>
+	$('.pluso-moimir').click(function() {
+		sd_userAction('mm','like');
+	});
+	<?php endif; ?>
+	<?php if ($social_discount_ok_like_enabled): ?>
+	$('.pluso-odnoklassniki').click(function() {
+		sd_userAction('ok','like');
+	});
+	<?php endif; ?>
+	
+	<?php if ($social_discount_tw_like_enabled): ?>
+	$('.pluso-twitter').click(function() {
+		sd_userAction('tw','like');
+	});
+	<?php endif; ?>
+}
+<?php endif; ?>
+
+
+function sd_userAction(soc, action) {
+	var product_id = <?php echo $product_id; ?>;
+	$.ajax({
+		url: '<?php echo $this->url->link('module/social_discount/action'); ?>',
+		type: 'POST',
+		dataType: 'json',
+		data: {
+			"product_id": product_id,
+			"social": soc,
+			"action": action
+		},
+		success: function(data) {
+			if (data['success']) {
+				sd_updateOffer(data);
+			}
+		}
+	});
+}
+</script>
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/controller/product/product.php">
+		<operation>
+			<search position="before"><![CDATA[
+			$this->data['heading_title']
+			]]></search>
+			<add><![CDATA[
+			$this->load->model('catalog/social_discount');
+			
+			$sd_params = array (
+				'social_discount_vk_like_enabled' => false,
+				'social_discount_vk_like_value' => '',
+				'social_discount_vk_share_enabled' => false,
+				'social_discount_vk_share_value' => '',
+				'social_discount_fb_like_enabled' => false,
+				'social_discount_fb_like_value' => '',
+				'social_discount_gp_like_enabled' => false,
+				'social_discount_gp_like_value' => '',
+				'social_discount_mm_like_enabled' => false,
+				'social_discount_mm_like_value' => '',
+				'social_discount_ok_like_enabled' => false,
+				'social_discount_ok_like_value' => '',
+				'social_discount_tw_like_enabled' => false,
+				'social_discount_tw_like_value' => '',
+			);
+			// read settings from module
+			foreach ($sd_params as $sd_param_name => $value) {
+				$sd_params[$sd_param_name] = $this->config->get($sd_param_name);
+			}
+			
+			$sd_params['social_discount_custom_enabled'] = false; // default value
+			
+			// get current custom settings for product
+			$this->load->model('catalog/social_discount');
+			
+			if (isset($this->request->get['product_id'])) {
+				$sd_custom = $this->model_catalog_social_discount->getCustomSocialDiscount($this->request->get['product_id']);
+			
+				if ($sd_custom && $sd_custom['social_discount_custom_enabled']) {
+					$sd_params = array_merge($sd_params, $sd_custom);
+				}
+			}
+			
+			// set values for template
+			$this->data = array_merge($this->data, $sd_params);
+			
+			$this->data['social_discount_active_mark'] = html_entity_decode($this->config->get('social_discount_active_mark'), ENT_QUOTES, 'UTF-8');
+			
+			$this->data['social_discount_integration_addthis_enabled'] = $this->config->get('social_discount_integration_addthis_enabled');
+			$this->data['social_discount_integration_pluso_enabled'] = $this->config->get('social_discount_integration_pluso_enabled');
+			]]></add>
+		</operation>
+		
+		<operation>
+			<search position="after"><![CDATA[
+			if ($product_info) {
+			]]></search>
+			<add><![CDATA[
+			$this->load->model('catalog/social_discount');
+			$this->model_catalog_social_discount->updateProductSpecial($product_info);
+				
+			$this->data['social_discount'] = $product_info['social_discount'];
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/controller/product/category.php,catalog/controller/product/search.php,catalog/controller/product/manufacturer.php,catalog/controller/module/latest.php">
+		<operation>
+			<search position="after"><![CDATA[
+			$results = $this->model_catalog_product->getProducts
+			]]></search>
+			<add><![CDATA[
+			$this->load->model('catalog/social_discount');
+			
+			while ( (list($key, $value) = each($results)) !== false ) {
+				$this->model_catalog_social_discount->updateProductSpecial($results[$key]);
+			}
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/controller/product/special.php,catalog/controller/module/special.php">
+		<operation>
+			<search position="after"><![CDATA[
+			$results = $this->model_catalog_product->getProductSpecials
+			]]></search>
+			<add><![CDATA[
+			$this->load->model('catalog/social_discount');
+			
+			while ( (list($key, $value) = each($results)) !== false ) {
+				$this->model_catalog_social_discount->updateProductSpecial($results[$key]);
+			}
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/controller/module/bestseller.php">
+		<operation>
+			<search position="after"><![CDATA[
+			$results = $this->model_catalog_product->getBestSellerProducts
+			]]></search>
+			<add><![CDATA[
+			$this->load->model('catalog/social_discount');
+			
+			while ( (list($key, $value) = each($results)) !== false ) {
+				$this->model_catalog_social_discount->updateProductSpecial($results[$key]);
+			}
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/controller/product/compare.php,catalog/controller/module/featured.php">
+		<operation>
+			<search position="after"><![CDATA[
+			if ($product_info) {
+			]]></search>
+			<add><![CDATA[
+			$this->load->model('catalog/social_discount');
+			$this->model_catalog_social_discount->updateProductSpecial($product_info);
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="admin/controller/catalog/product.php">
+		<operation>
+			<search position="after"><![CDATA[
+			$this->model_catalog_product->editProduct($this->request->get['product_id'], $this->request->post);
+			]]></search>
+			<add><![CDATA[
+			// {{{
+			$this->load->model('catalog/social_discount');
+			
+			$sd_params = array (
+				'social_discount_vk_like_enabled' => false,
+				'social_discount_vk_like_value' => '',
+				'social_discount_vk_share_enabled' => false,
+				'social_discount_vk_share_value' => '',
+				'social_discount_fb_like_enabled' => false,
+				'social_discount_fb_like_value' => '',
+				'social_discount_gp_like_enabled' => false,
+				'social_discount_gp_like_value' => '',
+				'social_discount_mm_like_enabled' => false,
+				'social_discount_mm_like_value' => '',
+				'social_discount_ok_like_enabled' => false,
+				'social_discount_ok_like_value' => '',
+				'social_discount_tw_like_enabled' => false,
+				'social_discount_tw_like_value' => '',
+			);
+			// read settings from module
+			foreach ($sd_params as $sd_param_name => $value) {
+				$sd_params[$sd_param_name] = $this->config->get($sd_param_name);
+			}
+			
+			$sd_params['social_discount_custom_enabled'] = false; // default value
+
+			$sd_custom = $this->model_catalog_social_discount->getCustomSocialDiscount($this->request->get['product_id']);
+			
+			// get current custom settings for product
+			if ($sd_custom != false) {
+				$sd_params = array_merge($sd_params, $sd_custom);
+			}
+		
+			// save differences in POST
+			$sd_params['social_discount_vk_like_enabled']  = isset($this->request->post['social_discount_vk_like_enabled'])  && $this->request->post['social_discount_vk_like_enabled'] == 'on';
+			$sd_params['social_discount_vk_share_enabled'] = isset($this->request->post['social_discount_vk_share_enabled']) && $this->request->post['social_discount_vk_share_enabled'] == 'on';
+			$sd_params['social_discount_fb_like_enabled']  = isset($this->request->post['social_discount_fb_like_enabled'])  && $this->request->post['social_discount_fb_like_enabled'] == 'on';
+			$sd_params['social_discount_gp_like_enabled']  = isset($this->request->post['social_discount_gp_like_enabled'])  && $this->request->post['social_discount_gp_like_enabled'] == 'on';
+			$sd_params['social_discount_mm_like_enabled']  = isset($this->request->post['social_discount_mm_like_enabled'])  && $this->request->post['social_discount_mm_like_enabled'] == 'on';
+			$sd_params['social_discount_ok_like_enabled']  = isset($this->request->post['social_discount_ok_like_enabled'])  && $this->request->post['social_discount_ok_like_enabled'] == 'on';
+			$sd_params['social_discount_tw_like_enabled']  = isset($this->request->post['social_discount_tw_like_enabled'])  && $this->request->post['social_discount_tw_like_enabled'] == 'on';
+			
+			$sd_params['social_discount_vk_like_value'] = isset($this->request->post['social_discount_vk_like_value']) ? $this->request->post['social_discount_vk_like_value'] : $sd_params['social_discount_vk_like_value'];
+			$sd_params['social_discount_vk_share_value'] = isset($this->request->post['social_discount_vk_share_value']) ? $this->request->post['social_discount_vk_share_value'] : $sd_params['social_discount_vk_share_value'];
+			$sd_params['social_discount_fb_like_value'] = isset($this->request->post['social_discount_fb_like_value']) ? $this->request->post['social_discount_fb_like_value'] : $sd_params['social_discount_fb_like_value'];
+			$sd_params['social_discount_gp_like_value'] = isset($this->request->post['social_discount_gp_like_value']) ? $this->request->post['social_discount_gp_like_value'] : $sd_params['social_discount_gp_like_value'];
+			$sd_params['social_discount_mm_like_value'] = isset($this->request->post['social_discount_mm_like_value']) ? $this->request->post['social_discount_mm_like_value'] : $sd_params['social_discount_mm_like_value'];
+			$sd_params['social_discount_ok_like_value'] = isset($this->request->post['social_discount_ok_like_value']) ? $this->request->post['social_discount_ok_like_value'] : $sd_params['social_discount_ok_like_value'];
+			$sd_params['social_discount_tw_like_value'] = isset($this->request->post['social_discount_tw_like_value']) ? $this->request->post['social_discount_tw_like_value'] : $sd_params['social_discount_tw_like_value'];
+
+			$sd_params['social_discount_custom_enabled'] = isset($this->request->post['social_discount_custom_enabled']) && $this->request->post['social_discount_custom_enabled'] == 'on';
+			
+			if ($sd_params['social_discount_custom_enabled'] || $sd_custom['social_discount_custom_enabled']) {
+				$this->model_catalog_social_discount->setCustomSocialDiscount($this->request->get['product_id'], $sd_params);
+			}
+			// }}}
+			]]></add>
+		</operation>
+		
+		<operation>
+			<search position="before"><![CDATA[
+			if (isset($this->request->post['product_special'])) {
+			]]></search>
+			<add><![CDATA[
+			// {{{
+			$sd_params = array (
+				'social_discount_vk_like_enabled' => false,
+				'social_discount_vk_like_value' => '',
+				'social_discount_vk_share_enabled' => false,
+				'social_discount_vk_share_value' => '',
+				'social_discount_fb_like_enabled' => false,
+				'social_discount_fb_like_value' => '',
+				'social_discount_gp_like_enabled' => false,
+				'social_discount_gp_like_value' => '',
+				'social_discount_mm_like_enabled' => false,
+				'social_discount_mm_like_value' => '',
+				'social_discount_ok_like_enabled' => false,
+				'social_discount_ok_like_value' => '',
+				'social_discount_tw_like_enabled' => false,
+				'social_discount_tw_like_value' => '',
+			);
+			// read settings from module
+			foreach ($sd_params as $sd_param_name => $value) {
+				$sd_params[$sd_param_name] = $this->config->get($sd_param_name);
+			}
+			
+			$sd_params['social_discount_custom_enabled'] = false; // default value
+			
+			// get current custom settings for product
+			$this->load->model('catalog/social_discount');
+			
+			if (isset($this->request->get['product_id'])) {
+				$sd_custom = $this->model_catalog_social_discount->getCustomSocialDiscount($this->request->get['product_id']);
+			
+				if ($sd_custom) {
+					$sd_params = array_merge($sd_params, $sd_custom);
+				}
+			}
+			
+			// set values for template
+			$this->data = array_merge($this->data, $sd_params);
+			// }}}
+			
+			if (isset($this->request->post['social_discount_discount_type'])) {
+				$this->data['social_discount_discount_type'] = $this->request->post['social_discount_discount_type'];
+			} else {
+				$this->data['social_discount_discount_type'] = (int)$this->config->get('social_discount_discount_type');
+			}
+			
+			switch ($this->data['social_discount_discount_type']) {
+			case 0:
+				$this->data['social_discount_type_sign'] = '%';
+				break;
+			case 1:
+				$this->data['social_discount_type_sign'] = $this->config->get('config_currency');
+				break;
+			}
+			]]></add>
+		</operation>
+	</file>
+	
+	
+	<file name="admin/model/catalog/product.php">
+		<operation>
+			<search position="after"><![CDATA[
+			$product_id = $this->db->getLastId();
+			]]></search>
+			<add><![CDATA[
+			// {{{
+			$this->load->model('catalog/social_discount');
+			
+			$sd_params = array (
+				'social_discount_vk_like_enabled' => false,
+				'social_discount_vk_like_value' => '',
+				'social_discount_vk_share_enabled' => false,
+				'social_discount_vk_share_value' => '',
+				'social_discount_fb_like_enabled' => false,
+				'social_discount_fb_like_value' => '',
+				'social_discount_gp_like_enabled' => false,
+				'social_discount_gp_like_value' => '',
+				'social_discount_mm_like_enabled' => false,
+				'social_discount_mm_like_value' => '',
+				'social_discount_ok_like_enabled' => false,
+				'social_discount_ok_like_value' => '',
+				'social_discount_tw_like_enabled' => false,
+				'social_discount_tw_like_value' => '',
+			);
+			// read settings from module
+			foreach ($sd_params as $sd_param_name => $value) {
+				$sd_params[$sd_param_name] = $this->config->get($sd_param_name);
+			}
+			
+			$sd_params['social_discount_custom_enabled'] = false; // default value
+
+			$sd_custom = $this->model_catalog_social_discount->getCustomSocialDiscount($product_id);
+			
+			// get current custom settings for product
+			if ($sd_custom != false) {
+				$sd_params = array_merge($sd_params, $sd_custom);
+			}
+		
+			// save differences in POST
+			$sd_params['social_discount_vk_like_enabled']  = isset($this->request->post['social_discount_vk_like_enabled'])  ? $this->request->post['social_discount_vk_like_enabled'] == 'on'  : $sd_params['social_discount_vk_like_enabled'];
+			$sd_params['social_discount_vk_share_enabled'] = isset($this->request->post['social_discount_vk_share_enabled']) ? $this->request->post['social_discount_vk_share_enabled'] == 'on' : $sd_params['social_discount_vk_share_enabled'];
+			$sd_params['social_discount_fb_like_enabled']  = isset($this->request->post['social_discount_fb_like_enabled'])  ? $this->request->post['social_discount_fb_like_enabled'] == 'on'  : $sd_params['social_discount_fb_like_enabled'];
+			$sd_params['social_discount_gp_like_enabled']  = isset($this->request->post['social_discount_gp_like_enabled'])  ? $this->request->post['social_discount_gp_like_enabled'] == 'on'  : $sd_params['social_discount_gp_like_enabled'];
+			$sd_params['social_discount_mm_like_enabled']  = isset($this->request->post['social_discount_mm_like_enabled'])  ? $this->request->post['social_discount_mm_like_enabled'] == 'on'  : $sd_params['social_discount_mm_like_enabled'];
+			$sd_params['social_discount_ok_like_enabled']  = isset($this->request->post['social_discount_ok_like_enabled'])  ? $this->request->post['social_discount_ok_like_enabled'] == 'on'  : $sd_params['social_discount_ok_like_enabled'];
+			$sd_params['social_discount_tw_like_enabled']  = isset($this->request->post['social_discount_tw_like_enabled'])  ? $this->request->post['social_discount_tw_like_enabled'] == 'on'  : $sd_params['social_discount_tw_like_enabled'];
+			
+			$sd_params['social_discount_vk_like_value'] = isset($this->request->post['social_discount_vk_like_value']) ? $this->request->post['social_discount_vk_like_value'] : $sd_params['social_discount_vk_like_value'];
+			$sd_params['social_discount_vk_share_value'] = isset($this->request->post['social_discount_vk_share_value']) ? $this->request->post['social_discount_vk_share_value'] : $sd_params['social_discount_vk_share_value'];
+			$sd_params['social_discount_fb_like_value'] = isset($this->request->post['social_discount_fb_like_value']) ? $this->request->post['social_discount_fb_like_value'] : $sd_params['social_discount_fb_like_value'];
+			$sd_params['social_discount_gp_like_value'] = isset($this->request->post['social_discount_gp_like_value']) ? $this->request->post['social_discount_gp_like_value'] : $sd_params['social_discount_gp_like_value'];
+			$sd_params['social_discount_mm_like_value'] = isset($this->request->post['social_discount_mm_like_value']) ? $this->request->post['social_discount_mm_like_value'] : $sd_params['social_discount_mm_like_value'];
+			$sd_params['social_discount_ok_like_value'] = isset($this->request->post['social_discount_ok_like_value']) ? $this->request->post['social_discount_ok_like_value'] : $sd_params['social_discount_ok_like_value'];
+			$sd_params['social_discount_tw_like_value'] = isset($this->request->post['social_discount_tw_like_value']) ? $this->request->post['social_discount_tw_like_value'] : $sd_params['social_discount_tw_like_value'];
+
+			$sd_params['social_discount_custom_enabled'] = isset($this->request->post['social_discount_custom_enabled']) ? $this->request->post['social_discount_custom_enabled'] == 'on' : $sd_params['social_discount_custom_enabled'];
+			
+			if ($sd_params['social_discount_custom_enabled'] || $sd_custom['social_discount_custom_enabled']) {
+				$this->model_catalog_social_discount->setCustomSocialDiscount($product_id, $sd_params);
+			}
+			// }}}
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="admin/view/template/catalog/product_form.tpl">
+		<operation>
+			<search position="after"><![CDATA[
+			<div id="tab-special">
+			]]></search>
+			<add><![CDATA[
+			<!-- {{{ -->
+			  <h2>Скидка за "лайк":</h2>
+			  <input type="checkbox" name="social_discount_custom_enabled" id="social_discount_custom_enabled"<?php echo $social_discount_custom_enabled ? ' checked="checked"' : ''; ?>><label for="social_discount_custom_enabled">Задать особые значения для скидок за действия в социальных сетях</label>
+			  
+			  <script>
+			  $(document).ready(function() {
+			  <?php if ($social_discount_custom_enabled == false): ?>
+				$('#social_discount_params input').attr('disabled', 'disabled');
+			  <?php endif; ?>
+				$('#social_discount_custom_enabled').change(function() {
+					if ($(this).attr('checked') == 'checked') {
+						$('#social_discount_params input').removeAttr('disabled');
+					} else {
+						$('#social_discount_params input').attr('disabled', 'disabled');
+					}
+				});
+			  });
+			  </script>
+			  
+			  <table id="social_discount_params" class="list" style="width: 450px; margin-top: 15px;">
+				<tr>
+					<td width="140">VK
+					<td>
+						<input type="checkbox" name="social_discount_vk_like_enabled" id="social_discount_vk_like_enabled"<?php echo $social_discount_vk_like_enabled ? ' checked="checked"' : ''; ?>/><label for="social_discount_vk_like_enabled">Like</label>
+						<input type="text" name="social_discount_vk_like_value" value="<?php echo $social_discount_vk_like_value; ?>" size="1" />
+						<span class="sd_type"><?php echo $social_discount_type_sign; ?></span>
+					</td>
+					<td>
+						<input type="checkbox" name="social_discount_vk_share_enabled" id="social_discount_vk_share_enabled"<?php echo $social_discount_vk_share_enabled ? ' checked="checked"' : ''; ?>/><label for="social_discount_vk_share_enabled">Share</label>
+						<input type="text" name="social_discount_vk_share_value" value="<?php echo $social_discount_vk_share_value; ?>" size="1" />
+						<span class="sd_type"><?php echo $social_discount_type_sign; ?></span>
+					</td>
+				</tr>
+				<tr>
+					<td width="140">Facebook
+					<td>
+						<input type="checkbox" name="social_discount_fb_like_enabled" id="social_discount_fb_like_enabled"<?php echo $social_discount_fb_like_enabled ? ' checked="checked"' : ''; ?>/><label for="social_discount_fb_like_enabled">Like</label>
+						<input type="text" name="social_discount_fb_like_value" value="<?php echo $social_discount_fb_like_value; ?>" size="1" />
+						<span class="sd_type"><?php echo $social_discount_type_sign; ?></span>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				
+				<tr>
+					<td width="140">Google Plus
+					<td>
+						<input type="checkbox" name="social_discount_gp_like_enabled" id="social_discount_gp_like_enabled"<?php echo $social_discount_gp_like_enabled ? ' checked="checked"' : ''; ?>/><label for="social_discount_gp_like_enabled">Like</label>
+						<input type="text" name="social_discount_gp_like_value" value="<?php echo $social_discount_gp_like_value; ?>" size="1" />
+						<span class="sd_type"><?php echo $social_discount_type_sign; ?></span>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				
+				<tr>
+					<td width="140">Мой Мир
+					<td>
+						<input type="checkbox" name="social_discount_mm_like_enabled" id="social_discount_mm_like_enabled"<?php echo $social_discount_mm_like_enabled ? ' checked="checked"' : ''; ?>/><label for="social_discount_mm_like_enabled">Like</label>
+						<input type="text" name="social_discount_mm_like_value" value="<?php echo $social_discount_mm_like_value; ?>" size="1" />
+						<span class="sd_type"><?php echo $social_discount_type_sign; ?></span>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				
+				<tr>
+					<td width="140">Одноклассники
+					<td>
+						<input type="checkbox" name="social_discount_ok_like_enabled" id="social_discount_ok_like_enabled"<?php echo $social_discount_ok_like_enabled ? ' checked="checked"' : ''; ?>/><label for="social_discount_ok_like_enabled">Like</label>
+						<input type="text" name="social_discount_ok_like_value" value="<?php echo $social_discount_ok_like_value; ?>" size="1" />
+						<span class="sd_type"><?php echo $social_discount_type_sign; ?></span>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				
+				<tr>
+					<td width="140">Twitter
+					<td>
+						<input type="checkbox" name="social_discount_tw_like_enabled" id="social_discount_ok_like_enabled"<?php echo $social_discount_tw_like_enabled ? ' checked="checked"' : ''; ?>/><label for="social_discount_tw_like_enabled">Like</label>
+						<input type="text" name="social_discount_tw_like_value" value="<?php echo $social_discount_tw_like_value; ?>" size="1" />
+						<span class="sd_type"><?php echo $social_discount_type_sign; ?></span>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				</table>
+					
+			  <h2>Другие акции:</h2>
+			  <!-- }}} -->
+			]]></add>
+		</operation>
+	</file>
+</modification>

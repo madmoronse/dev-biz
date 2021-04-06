@@ -1,0 +1,20 @@
+<modification>
+	<id>SG-YouWatched - You watched these products</id>
+	<version>For OpenCart v.1.5.x</version>
+	<vqmver>2.1.0</vqmver>
+	<author>Anton Gavrilov(spirit.gavrilov@tut.by)</author>
+	<file name="catalog/controller/product/product.php">
+		<operation>
+			<search position="after">
+				<![CDATA[if ($product_info) {]]>
+			</search>
+			<add>
+				<![CDATA[//you watched module
+            $watched = isset($this->request->cookie["youwatched"]) ? unserialize(html_entity_decode($this->request->cookie["youwatched"])) : array();
+            $watched[$product_id] = time();
+            setcookie("youwatched", serialize($watched), time() + 60 * 60 * 24 * 365, '/');
+				]]>
+			</add>
+		</operation>
+	</file>
+</modification>

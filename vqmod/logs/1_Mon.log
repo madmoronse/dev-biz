@@ -1,0 +1,247 @@
+---------- Date: 2020-10-05 20:41:59 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : W:\domains\test-oc\vqmod/xml/rearrange_slideshow.xml
+   id        : rearrange slideshow images
+   version   : 0.1
+   vqmver    : 2.1.7
+   author    : Tri Le
+
+File Name    : catalog/model/design/banner.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): "'");
+MOD DETAILS:
+   modFile   : W:\domains\test-oc\vqmod/xml/vqmm_pav_blogs_menu_shortcut.xml
+   id        : VQMod Pavo Blogs Shortcut
+   version   : 1.0.0
+   vqmver    : 2.3.0
+   author    : pavothemes.com
+
+File Name    : catalog/language/*/common/header.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $_['text_home']           = 'Home';
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-10-05 20:43:10 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /index.php?route=product/category&amp;path=3_14637
+MOD DETAILS:
+   modFile   : W:\domains\test-oc\vqmod/xml/social_discount.xml
+   id        : Social Discount
+   version   : 2.2
+   vqmver    : 2.0.0
+   author    : Gennady Telegin, support@itxd.ru
+
+File Name    : catalog/controller/product/category.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $results = $this->model_catalog_product->getProducts
+
+MOD DETAILS:
+   modFile   : W:\domains\test-oc\vqmod/xml/vqmm_pav_blogs_menu_shortcut.xml
+   id        : VQMod Pavo Blogs Shortcut
+   version   : 1.0.0
+   vqmver    : 2.3.0
+   author    : pavothemes.com
+
+File Name    : catalog/language/*/common/header.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $_['text_home']           = 'Home';
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-10-05 20:43:55 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /index.php?route=common/home
+MOD DETAILS:
+   modFile   : W:\domains\test-oc\vqmod/xml/rearrange_slideshow.xml
+   id        : rearrange slideshow images
+   version   : 0.1
+   vqmver    : 2.1.7
+   author    : Tri Le
+
+File Name    : catalog/model/design/banner.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): "'");
+MOD DETAILS:
+   modFile   : W:\domains\test-oc\vqmod/xml/vqmm_pav_blogs_menu_shortcut.xml
+   id        : VQMod Pavo Blogs Shortcut
+   version   : 1.0.0
+   vqmver    : 2.3.0
+   author    : pavothemes.com
+
+File Name    : catalog/language/*/common/header.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $_['text_home']           = 'Home';
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-10-05 20:45:42 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /index.php?route=common/home
+MOD DETAILS:
+   modFile   : W:\domains\test-oc\vqmod/xml/rearrange_slideshow.xml
+   id        : rearrange slideshow images
+   version   : 0.1
+   vqmver    : 2.1.7
+   author    : Tri Le
+
+File Name    : catalog/model/design/banner.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): "'");
+MOD DETAILS:
+   modFile   : W:\domains\test-oc\vqmod/xml/vqmm_pav_blogs_menu_shortcut.xml
+   id        : VQMod Pavo Blogs Shortcut
+   version   : 1.0.0
+   vqmver    : 2.3.0
+   author    : pavothemes.com
+
+File Name    : catalog/language/*/common/header.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $_['text_home']           = 'Home';
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-10-05 20:46:20 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /index.php?route=common/home
+MOD DETAILS:
+   modFile   : W:\domains\test-oc\vqmod/xml/rearrange_slideshow.xml
+   id        : rearrange slideshow images
+   version   : 0.1
+   vqmver    : 2.1.7
+   author    : Tri Le
+
+File Name    : catalog/model/design/banner.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): "'");
+MOD DETAILS:
+   modFile   : W:\domains\test-oc\vqmod/xml/vqmm_pav_blogs_menu_shortcut.xml
+   id        : VQMod Pavo Blogs Shortcut
+   version   : 1.0.0
+   vqmver    : 2.3.0
+   author    : pavothemes.com
+
+File Name    : catalog/language/*/common/header.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $_['text_home']           = 'Home';
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-10-05 20:47:12 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /
+MOD DETAILS:
+   modFile   : W:\domains\test-oc\vqmod/xml/rearrange_slideshow.xml
+   id        : rearrange slideshow images
+   version   : 0.1
+   vqmver    : 2.1.7
+   author    : Tri Le
+
+File Name    : catalog/model/design/banner.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): "'");
+MOD DETAILS:
+   modFile   : W:\domains\test-oc\vqmod/xml/vqmm_pav_blogs_menu_shortcut.xml
+   id        : VQMod Pavo Blogs Shortcut
+   version   : 1.0.0
+   vqmver    : 2.3.0
+   author    : pavothemes.com
+
+File Name    : catalog/language/*/common/header.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $_['text_home']           = 'Home';
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-10-05 20:47:49 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /index.php?route=product/category&amp;path=1789_1
+MOD DETAILS:
+   modFile   : W:\domains\test-oc\vqmod/xml/social_discount.xml
+   id        : Social Discount
+   version   : 2.2
+   vqmver    : 2.0.0
+   author    : Gennady Telegin, support@itxd.ru
+
+File Name    : catalog/controller/product/category.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $results = $this->model_catalog_product->getProducts
+
+MOD DETAILS:
+   modFile   : W:\domains\test-oc\vqmod/xml/vqmm_pav_blogs_menu_shortcut.xml
+   id        : VQMod Pavo Blogs Shortcut
+   version   : 1.0.0
+   vqmver    : 2.3.0
+   author    : pavothemes.com
+
+File Name    : catalog/language/*/common/header.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $_['text_home']           = 'Home';
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-10-05 20:48:14 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /index.php?route=product/product&amp;path=1789_1&amp;product_id=20289
+MOD DETAILS:
+   modFile   : W:\domains\test-oc\vqmod/xml/vqmm_pav_blogs_menu_shortcut.xml
+   id        : VQMod Pavo Blogs Shortcut
+   version   : 1.0.0
+   vqmver    : 2.3.0
+   author    : pavothemes.com
+
+File Name    : catalog/language/*/common/header.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $_['text_home']           = 'Home';
+
+MOD DETAILS:
+   modFile   : W:\domains\test-oc\vqmod/xml/reviews-stars-v2.1.xml
+   id        : reviews-stars
+   version   : 2.1
+   vqmver    : 2.4.1
+   author    : vivivor
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(1)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): id="button-review"
+MOD DETAILS:
+   modFile   : W:\domains\test-oc\vqmod/xml/social_discount.xml
+   id        : Social Discount
+   version   : 2.2
+   vqmver    : 2.0.0
+   author    : Gennady Telegin, support@itxd.ru
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <?php echo $header; ?>
+
+MOD DETAILS:
+   modFile   : W:\domains\test-oc\vqmod/xml/social_discount_buttons.xml
+   id        : Social Discount (Buttons)
+   version   : 2.2
+   vqmver    : 2.0.0
+   author    : Gennady Telegin, support@itxd.ru
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): {SOCIAL_BUTTONS}
+MOD DETAILS:
+   modFile   : W:\domains\test-oc\vqmod/xml/social_discount_themes.xml
+   id        : Social Discount (Themes)
+   version   : 2.2
+   vqmver    : 2.0.0
+   author    : Gennady Telegin, support@itxd.ru
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <?php echo $footer; ?>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2020-10-05 20:48:33 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /index.php?route=common/home
+MOD DETAILS:
+   modFile   : W:\domains\test-oc\vqmod/xml/rearrange_slideshow.xml
+   id        : rearrange slideshow images
+   version   : 0.1
+   vqmver    : 2.1.7
+   author    : Tri Le
+
+File Name    : catalog/model/design/banner.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): "'");
+MOD DETAILS:
+   modFile   : W:\domains\test-oc\vqmod/xml/vqmm_pav_blogs_menu_shortcut.xml
+   id        : VQMod Pavo Blogs Shortcut
+   version   : 1.0.0
+   vqmver    : 2.3.0
+   author    : pavothemes.com
+
+File Name    : catalog/language/*/common/header.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $_['text_home']           = 'Home';
+
+----------------------------------------------------------------------
+
+

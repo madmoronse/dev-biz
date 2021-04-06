@@ -1,0 +1,62 @@
+<modification>
+	<id>Social Discount (Themes)</id>
+	<version>2.2</version>
+	<vqmver>2.0.0</vqmver>
+	<author>Gennady Telegin, support@itxd.ru</author>
+
+	<file name="catalog/view/theme/*/template/product/product.tpl">	
+		<operation>
+            <search position="before"><![CDATA[
+            <?php echo $footer; ?>
+            ]]></search>
+            <add><![CDATA[
+<script type="text/javascript">
+function sd_updateOffer(data) {
+	if (data['percent'] > 0) {
+		$('#priceUpdate1').html(data['discount_price']);
+		$('#priceUpdate').addClass('price-old');
+		
+		if (data['social_discount']) {
+			$('#social_discount_active').show().css('display', 'inline-block');
+		} else {
+			$('#social_discount_active').hide();
+		}
+	} else {
+		$('#priceUpdate').removeClass('price-old');
+		$('#priceUpdate1').html('');
+		$('#social_discount_active').hide();
+	}
+}
+</script>
+			]]></add>
+        </operation>
+		
+		<operation error="skip">
+            <search position="replace" index="1"><![CDATA[
+            <?php echo $price; ?>
+            ]]></search>
+            <add><![CDATA[
+			<span id="priceUpdate"><?php echo $price; ?></span><span class="price-new" id="priceUpdate1"></span>
+			]]></add>
+        </operation>
+		
+		<operation error="skip">
+            <search position="replace" index="1"><![CDATA[
+            <span class="price-old"><?php echo $price; ?></span> <span class="price-new"><?php echo $special; ?></span>
+            ]]></search>
+            <add><![CDATA[
+			<span class="price-old" id="priceUpdate"><?php echo $price; ?></span> <span class="price-new" id="priceUpdate1"><?php echo $special; ?></span>
+			]]></add>
+        </operation>
+		
+		<operation error="skip">
+			<search position="after"><![CDATA[
+			<span class="price-new"
+			]]></search>
+			<add><![CDATA[
+			
+			<div id="social_discount_active"<?php if ($social_discount == false) { echo ' style="display: none;"'; } else { echo ' style="display: inline-block"'; } ?>><?php echo $social_discount_active_mark; ?></div>
+			]]></add>
+		</operation>
+	</file>
+</modification>

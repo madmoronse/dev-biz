@@ -1,0 +1,4 @@
+@import "siteerrormessage_base.css";
+
+#siteerrormessage_button > a {background: url("../../image/siteerrormessage/siteerrormessage_button_white.png") 0px 0px transparent;}
+#siteerrormessage_button >a:hover {background: url("../../image/siteerrormessage/siteerrormessage_button_white.png") 22px 0px transparent; }

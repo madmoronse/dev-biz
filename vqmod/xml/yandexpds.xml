@@ -1,0 +1,23 @@
+<modification>
+	<id>YandexPDS</id>
+	<version>1.0</version>
+	<vqmver>1.1.0</vqmver>
+	<author>OcJoy.com</author>
+  <file name="admin/model/*/*.php">
+    <operation error="skip">
+      <search position="after">
+        <![CDATA[
+		$this->cache->delete
+        ]]>
+      </search>
+      <add>
+        <![CDATA[
+		$this->load->model('tool/pinger');
+$this->model_tool_pinger->getlink(get_defined_vars(),__CLASS__);
+        ]]>
+      </add>
+    </operation>
+  </file>
+
+
+</modification>

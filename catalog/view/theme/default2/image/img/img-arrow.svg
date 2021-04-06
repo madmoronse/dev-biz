@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg3336"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   xml:space="preserve"
+   width="31.25"
+   height="55"
+   viewBox="0 0 31.25 55"
+   sodipodi:docname="img-arrow.svg"><metadata
+     id="metadata3342"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+     id="defs3340"><clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3354"><path
+         d="M 0.8836472,0.4517774 0.0351483,0.9339143 0.120023,0.9821033 0.9685219,0.5000017 0.8836472,0.4517774 Z M 0.120023,0.0179 0.0351483,0.0660891 0.8836472,0.5482259 0.9685219,0.5000017 0.120023,0.0179 Z"
+         id="path3356"
+         inkscape:connector-curvature="0" /></clipPath></defs><sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="664"
+     inkscape:window-height="480"
+     id="namedview3338"
+     showgrid="false"
+     inkscape:zoom="15.472727"
+     inkscape:cx="15.625"
+     inkscape:cy="27.5"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g3344" /><g
+     id="g3344"
+     inkscape:groupmode="layer"
+     inkscape:label="Rectangle 2"
+     transform="matrix(1.25,0,0,-1.25,0,55)"><g
+       id="g3346"><g
+         id="g3348"
+         transform="scale(25,44)"><g
+           id="g3350"><g
+             id="g3352"
+             clip-path="url(#clipPath3354)"><image
+               width="1"
+               height="1"
+               preserveAspectRatio="none"
+               transform="matrix(1,0,0,-1,0,1)"
+               xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAsCAYAAACQXhN9AAAABHNCSVQICAgIfAhkiAAAAC5JREFUWIXtzTERAAAIBCC1f+c3hecCBegkqWNzHUgkEolEIpFIJBKJRCKR/CQLMf4EVNDvR80AAAAASUVORK5CYII="
+               id="image3358" /></g></g></g></g></g></svg>

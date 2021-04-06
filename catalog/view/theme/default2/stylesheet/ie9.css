@@ -1,0 +1,43 @@
+#top {
+	z-index: auto;
+}
+#top  #top-contener {
+	height: auto;
+	line-height: 45px;
+	border-radius: 0px;
+	box-shadow: none;
+	background: none;
+	border: none;
+	z-index: auto;
+}
+#top.resize{
+	height: 45px;
+}
+#top.resize  #top-contener {
+	height: 45px; 
+	line-height: 45px;
+}
+#header #top.resize #cart {
+	top: 8px;
+}
+#header #top #cart {
+	top: 8px;
+}
+#top-contener:before,
+#top-contener:after  {
+	display: none;
+}
+#header #logo,
+#header #search,
+#header #contact-us{
+	z-index: -1;
+}
+#cart,
+#language,
+#currency {
+	z-index: 99999;
+}
+#language a,
+#currency a  {
+	z-index: auto;
+}

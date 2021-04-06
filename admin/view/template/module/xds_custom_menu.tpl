@@ -1,0 +1,259 @@
+<?php echo $header; ?>
+<div id="content">
+  <div class="box">
+	
+		<div class="breadcrumb">
+			<?php foreach ($breadcrumbs as $breadcrumb) { ?>
+			<?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
+			<?php } ?>
+		</div>
+	
+		<?php if ($error_warning) { ?>
+		<div class="warning"><?php echo $error_warning; ?></div>
+		<?php } ?>
+	
+		<div class="heading">
+      <h1><?php echo $heading_title; ?></h1>
+			<div class="buttons"><a onclick="$('#form').submit();" class="button"><?php echo $button_save; ?></a><a onclick="location = '<?php echo $cancel; ?>';" class="button"><?php echo $button_cancel; ?></a></div>
+    </div>
+		<div class="content">
+			<form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form">
+				<h2><?php echo $heading_items_title; ?></h2>
+				<table id="module" class="list">
+					<thead>
+            <tr>
+							<td class="left"><?php echo $table_pos_title; ?></td>
+              <td class="left"><?php echo $table_name_title; ?></td>
+              <td class="left"><?php echo $table_href_title; ?></td>
+            </tr>
+          </thead>
+					
+					<!-- Пункт 1 -->
+					<tr>
+						<td class="left"><?php echo $item1_title; ?></td>
+						<td class="left">
+							<?php foreach ($languages as $language) { ?>
+              <input type="text" name="item1[<?php echo $language['language_id']; ?>][name]" value="<?php echo isset($item1[$language['language_id']]) ? $item1[$language['language_id']]['name'] : ''; ?>" />
+              <img src="view/image/flags/<?php echo $language['image']; ?>" title="<?php echo $language['name']; ?>" /><br />
+              <?php if (isset($error_name[$language['language_id']])) { ?>
+              <span class="error"><?php echo $error_name[$language['language_id']]; ?></span><br />
+              <?php } ?>
+              <?php } ?>
+						</td>
+						<td class="left">
+							<input type="text" name="item1_href" value="<?php echo $item1_href; ?>" style="width: 300px;" />
+						</td>
+					</tr>
+					
+					<!-- Пункт 2 -->
+					<tr>
+						<td class="left"><?php echo $item2_title; ?></td>
+						<td class="left">
+							<?php foreach ($languages as $language) { ?>
+              <input type="text" name="item2[<?php echo $language['language_id']; ?>][name]" value="<?php echo isset($item2[$language['language_id']]) ? $item2[$language['language_id']]['name'] : ''; ?>" />
+              <img src="view/image/flags/<?php echo $language['image']; ?>" title="<?php echo $language['name']; ?>" /><br />
+              <?php if (isset($error_name[$language['language_id']])) { ?>
+              <span class="error"><?php echo $error_name[$language['language_id']]; ?></span><br />
+              <?php } ?>
+              <?php } ?>
+						</td>
+						<td class="left">
+							<input type="text" name="item2_href" value="<?php echo $item2_href; ?>" style="width: 300px;" />
+						</td>
+					</tr>
+					
+					<!-- Пункт 3 -->
+					<tr>
+						<td class="left"><?php echo $item3_title; ?></td>
+						<td class="left">
+							<?php foreach ($languages as $language) { ?>
+              <input type="text" name="item3[<?php echo $language['language_id']; ?>][name]" value="<?php echo isset($item3[$language['language_id']]) ? $item3[$language['language_id']]['name'] : ''; ?>" />
+              <img src="view/image/flags/<?php echo $language['image']; ?>" title="<?php echo $language['name']; ?>" /><br />
+              <?php if (isset($error_name[$language['language_id']])) { ?>
+              <span class="error"><?php echo $error_name[$language['language_id']]; ?></span><br />
+              <?php } ?>
+              <?php } ?>
+						</td>
+						<td class="left">
+							<input type="text" name="item3_href" value="<?php echo $item3_href; ?>" style="width: 300px;" />
+						</td>
+					</tr>
+					
+					<!-- Пункт 4 -->
+					<tr>
+						<td class="left"><?php echo $item4_title; ?></td>
+						<td class="left">
+							<?php foreach ($languages as $language) { ?>
+              <input type="text" name="item4[<?php echo $language['language_id']; ?>][name]" value="<?php echo isset($item4[$language['language_id']]) ? $item4[$language['language_id']]['name'] : ''; ?>" />
+              <img src="view/image/flags/<?php echo $language['image']; ?>" title="<?php echo $language['name']; ?>" /><br />
+              <?php if (isset($error_name[$language['language_id']])) { ?>
+              <span class="error"><?php echo $error_name[$language['language_id']]; ?></span><br />
+              <?php } ?>
+              <?php } ?>
+						</td>
+						<td class="left">
+							<input type="text" name="item4_href" value="<?php echo $item4_href; ?>" style="width: 300px;" />
+						</td>
+					</tr>
+					
+					<!-- Пункт 5 -->
+					<tr>
+						<td class="left"><?php echo $item5_title; ?></td>
+						<td class="left">
+							<?php foreach ($languages as $language) { ?>
+              <input type="text" name="item5[<?php echo $language['language_id']; ?>][name]" value="<?php echo isset($item5[$language['language_id']]) ? $item5[$language['language_id']]['name'] : ''; ?>" />
+              <img src="view/image/flags/<?php echo $language['image']; ?>" title="<?php echo $language['name']; ?>" /><br />
+              <?php if (isset($error_name[$language['language_id']])) { ?>
+              <span class="error"><?php echo $error_name[$language['language_id']]; ?></span><br />
+              <?php } ?>
+              <?php } ?>
+						</td>
+						<td class="left">
+							<input type="text" name="item5_href" value="<?php echo $item5_href; ?>" style="width: 300px;" />
+						</td>
+					</tr>
+				</table>
+				<h2><?php echo $heading_social_title; ?></h2>
+				<table id="module" class="list">
+					<thead>
+            <tr>
+							<td class="left"><?php echo $table_name_title; ?></td>
+              <td class="left"><?php echo $table_href_title; ?></td>
+            </tr>
+          </thead>
+					<tr>
+						<td class="left"><?php echo $odnoklassniki_title; ?></td>
+						<td class="left">
+							<input type="text" name="odnoklassniki_href" value="<?php echo $odnoklassniki_href; ?>" style="width: 300px;" />
+						</td>
+					</tr>
+					<tr>
+						<td class="left"><?php echo $vkontakte_title; ?></td>
+						<td class="left">
+							<input type="text" name="vkontakte_href" value="<?php echo $vkontakte_href; ?>" style="width: 300px;" />
+						</td>
+					</tr>
+					<tr>
+						<td class="left"><?php echo $facebook_title; ?></td>
+						<td class="left">
+							<input type="text" name="facebook_href" value="<?php echo $facebook_href; ?>" style="width: 300px;" />
+						</td>
+					</tr>
+					<tr>
+						<td class="left"><?php echo $twitter_title; ?></td>
+						<td class="left">
+							<input type="text" name="twitter_href" value="<?php echo $twitter_href; ?>" style="width: 300px;" />
+						</td>
+					</tr>
+					<tr>
+						<td class="left"><?php echo $googleplus_title; ?></td>
+						<td class="left">
+							<input type="text" name="googleplus_href" value="<?php echo $googleplus_href; ?>" style="width: 300px;" />
+						</td>
+					</tr>
+				</table>
+				
+				<h2><?php echo $heading_shem_title; ?></h2>
+				<table id="module" class="list">
+          <thead>
+            <tr>
+              <td class="left"><?php echo $entry_layout; ?></td>
+              <td class="left"><?php echo $entry_position; ?></td>
+              <td class="left"><?php echo $entry_status; ?></td>
+              <td class="right"><?php echo $entry_sort_order; ?></td>
+              <td></td>
+            </tr>
+          </thead>
+          <?php $module_row = 0; ?>
+          <?php foreach ($modules as $module) { ?>
+          <tbody id="module-row<?php echo $module_row; ?>">
+            <tr>
+              <td class="left"><select name="xds_custom_menu_module[<?php echo $module_row; ?>][layout_id]">
+                  <?php foreach ($layouts as $layout) { ?>
+                  <?php if ($layout['layout_id'] == $module['layout_id']) { ?>
+                  <option value="<?php echo $layout['layout_id']; ?>" selected="selected"><?php echo $layout['name']; ?></option>
+                  <?php } else { ?>
+                  <option value="<?php echo $layout['layout_id']; ?>"><?php echo $layout['name']; ?></option>
+                  <?php } ?>
+                  <?php } ?>
+                </select></td>
+              <td class="left"><select name="xds_custom_menu_module[<?php echo $module_row; ?>][position]">
+                  <?php if ($module['position'] == 'content_top') { ?>
+                  <option value="content_top" selected="selected"><?php echo $text_content_top; ?></option>
+                  <?php } else { ?>
+                  <option value="content_top"><?php echo $text_content_top; ?></option>
+                  <?php } ?>
+                  <?php if ($module['position'] == 'content_bottom') { ?>
+                  <option value="content_bottom" selected="selected"><?php echo $text_content_bottom; ?></option>
+                  <?php } else { ?>
+                  <option value="content_bottom"><?php echo $text_content_bottom; ?></option>
+                  <?php } ?>
+                  <?php if ($module['position'] == 'column_left') { ?>
+                  <option value="column_left" selected="selected"><?php echo $text_column_left; ?></option>
+                  <?php } else { ?>
+                  <option value="column_left"><?php echo $text_column_left; ?></option>
+                  <?php } ?>
+                  <?php if ($module['position'] == 'column_right') { ?>
+                  <option value="column_right" selected="selected"><?php echo $text_column_right; ?></option>
+                  <?php } else { ?>
+                  <option value="column_right"><?php echo $text_column_right; ?></option>
+                  <?php } ?>
+                </select></td>
+              <td class="left"><select name="xds_custom_menu_module[<?php echo $module_row; ?>][status]">
+                  <?php if ($module['status']) { ?>
+                  <option value="1" selected="selected"><?php echo $text_enabled; ?></option>
+                  <option value="0"><?php echo $text_disabled; ?></option>
+                  <?php } else { ?>
+                  <option value="1"><?php echo $text_enabled; ?></option>
+                  <option value="0" selected="selected"><?php echo $text_disabled; ?></option>
+                  <?php } ?>
+                </select></td>
+              <td class="right"><input type="text" name="xds_custom_menu_module[<?php echo $module_row; ?>][sort_order]" value="<?php echo $module['sort_order']; ?>" size="3" /></td>
+              <td class="left"><a onclick="$('#module-row<?php echo $module_row; ?>').remove();" class="button"><?php echo $button_remove; ?></a></td>
+            </tr>
+          </tbody>
+          <?php $module_row++; ?>
+          <?php } ?>
+          <tfoot>
+            <tr>
+              <td colspan="4"></td>
+              <td class="left"><a onclick="addModule();" class="button"><?php echo $button_add_module; ?></a></td>
+            </tr>
+          </tfoot>
+        </table>
+			</form>
+		</div>
+	</div>
+</div>
+<script type="text/javascript"><!--
+var module_row = <?php echo $module_row; ?>;
+
+function addModule() {	
+	html  = '<tbody id="module-row' + module_row + '">';
+	html += '  <tr>';
+	html += '    <td class="left"><select name="xds_custom_menu_module[' + module_row + '][layout_id]">';
+	<?php foreach ($layouts as $layout) { ?>
+	html += '      <option value="<?php echo $layout['layout_id']; ?>"><?php echo addslashes($layout['name']); ?></option>';
+	<?php } ?>
+	html += '    </select></td>';
+	html += '    <td class="left"><select name="xds_custom_menu_module[' + module_row + '][position]">';
+	html += '      <option value="content_top"><?php echo $text_content_top; ?></option>';
+	html += '      <option value="content_bottom"><?php echo $text_content_bottom; ?></option>';
+	html += '      <option value="column_left"><?php echo $text_column_left; ?></option>';
+	html += '      <option value="column_right"><?php echo $text_column_right; ?></option>';
+	html += '    </select></td>';
+	html += '    <td class="left"><select name="xds_custom_menu_module[' + module_row + '][status]">';
+    html += '      <option value="1" selected="selected"><?php echo $text_enabled; ?></option>';
+    html += '      <option value="0"><?php echo $text_disabled; ?></option>';
+    html += '    </select></td>';
+	html += '    <td class="right"><input type="text" name="xds_custom_menu_module[' + module_row + '][sort_order]" value="" size="3" /></td>';
+	html += '    <td class="left"><a onclick="$(\'#module-row' + module_row + '\').remove();" class="button"><?php echo $button_remove; ?></a></td>';
+	html += '  </tr>';
+	html += '</tbody>';
+	
+	$('#module tfoot').before(html);
+	
+	module_row++;
+}
+//--></script> 
+<?php echo $footer; ?>

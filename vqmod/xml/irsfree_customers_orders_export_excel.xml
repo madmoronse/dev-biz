@@ -1,0 +1,202 @@
+<modification>
+
+	<id>Export customer list and order list</id>
+	<version>1.0</version>
+	<vqmver>2.3.2 +</vqmver>
+	<author>IRS</author>
+    
+<!-- Controller --> 
+  
+    <file name="admin/controller/sale/customer.php">
+		<operation>
+			<search position="before" offset="0"><![CDATA[$this->data['approve'] = $this->url->link('sale/customer/approve', 'token=' . $this->session->data['token'] . $url, 'SSL');]]></search>
+			<add><![CDATA[
+$this->data['export'] = $this->url->link('sale/customer/export', 'token=' . $this->session->data['token'], 'SSL');]]></add>
+		</operation>
+        
+	
+        	<operation>
+			<search position="before" offset="0"><![CDATA[$this->data['button_approve'] = $this->language->get('button_approve');]]></search>
+            <add><![CDATA[$this->data['button_export'] = $this->language->get('button_export');]]></add>
+		</operation>
+        
+        
+        	<operation>
+			<search position="before" offset="0"><![CDATA[public function address() {]]></search>
+            <add><![CDATA[ public function export($getarr='') {
+               
+        	$data = array();
+        
+        $customers = array();
+        
+        $customers_column=array();
+        
+        $this->load->model('sale/customer');
+        
+        $customers_column = array('Customer ID', 'Customer Name', 'Email', 'Telephone', 'Address', 'City', 'Post Code', 'Country', 'IP', 'Status', 'Approved', 'Date Added', 'Customer Group');
+            
+        $customers[0] = $customers_column;  
+        
+        $customers_list = $this->model_sale_customer->getCustomerstoexport($data);
+        
+        foreach($customers_list as $customer_row)
+        {
+            $customers[]=$customer_row;
+        }
+        require_once(DIR_SYSTEM . 'library/excel_xml.php');
+        $xls = new Excel_XML('UTF-8', false, 'Customers List');
+        $xls->addArray($customers);
+        $xls->generateXML('customerlist_'.date('Y-m-d _ H:i:s'));
+	}]]></add>
+		</operation>
+        
+        
+        
+        
+	</file>
+    
+<!-- Model -->
+
+	<file name="admin/model/sale/customer.php">
+		<operation>
+			<search position="before" offset="0"><![CDATA[public function getCustomers($data = array()) {]]></search>
+			<add><![CDATA[public function getCustomerstoexport($data = array()) {
+    	 
+$sql = "SELECT c.customer_id, CONCAT(c.firstname, ' ', c.lastname) AS name, c.email, c.telephone, CONCAT(oca.address_1,oca.address_2) AS address, oca.city, oca.postcode, occ.name as Country, c.ip, IF( c.status = 1, 'Enabled', 'Disabled' ) AS status, IF( c.approved = 1, 'Yes', 'No' ) AS approved, c.date_added, cgd.name AS customer_group FROM " . DB_PREFIX . "customer c LEFT JOIN " . DB_PREFIX . "customer_group_description cgd ON (c.customer_group_id = cgd.customer_group_id) LEFT JOIN " . DB_PREFIX . "address oca ON (c.address_id=oca.address_id) LEFT JOIN " . DB_PREFIX . "country occ ON (oca.country_id=occ.country_id) WHERE cgd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
+
+		$query = $this->db->query($sql);
+        
+		return $query->rows;	
+	}]]></add>
+		</operation>
+	</file>
+
+<!-- View -->
+
+	<file name="admin/view/template/sale/customer_list.tpl">
+		<operation>
+			<search position="replace"><![CDATA[<a onclick="$('form').attr('action', '<?php echo $approve; ?>'); $('form').submit();" class="button"><?php echo $button_approve; ?></a>]]></search>
+			<add><![CDATA[<a onclick="$('form').attr('action', '<?php echo $export; ?>'); $('form').submit();" class="button"><?php echo $button_export; ?></a><a onclick="$('form').attr('action', '<?php echo $approve; ?>'); $('form').submit();" class="button"><?php echo $button_approve; ?></a>]]></add>
+		</operation>
+	</file>
+    
+    
+<!-- Order list -->  
+    <!-- Controller --> 
+  
+    <file name="admin/controller/sale/order.php">
+		<operation>
+			<search position="before" offset="0"><![CDATA[$this->data['invoice'] = $this->url->link('sale/order/invoice', 'token=' . $this->session->data['token'], 'SSL');]]></search>
+			<add><![CDATA[
+$this->data['export'] = $this->url->link('sale/order/export', 'token=' . $this->session->data['token'], 'SSL');]]></add>
+		</operation>
+        
+	
+        	<operation>
+			<search position="before" offset="0"><![CDATA[$this->data['button_invoice'] = $this->language->get('button_invoice');]]></search>
+            <add><![CDATA[$this->data['button_export'] = $this->language->get('button_export');]]></add>
+		</operation>
+        
+        
+        	<operation>
+			<search position="before" offset="0"><![CDATA[protected function getList() {]]></search>
+            <add><![CDATA[public function export() {
+        
+		$data = array();
+                
+        $orders = array();
+        
+        $orders_column=array();
+        
+        $this->load->model('sale/order');
+        
+        $results = $this->model_sale_order->getOrdersexport($data); 
+        
+        $orders_list = array();
+        
+        	foreach ($results as $result) {
+
+			$orders_list[] = array(
+				'order_id'      => $result['order_id'],
+				'customer_group'=> $result['customer_group'],
+				'customer_name'      => $result['customer_name'],
+				'email'=> $result['email'],
+				'telephone'      => $result['telephone'],
+				'payment_address'=> $result['payment_address'],
+				'shipping_address'      => $result['shipping_address'],
+				'payment_method'=> $result['payment_method'],
+				'shipping_method'        => $result['shipping_method'],
+				'total'         => $this->currency->format($result['total'], $result['currency_code'], $result['currency_value']),
+				'currency_code'    => $result['currency_code'],
+				'date_added'  =>  $result['date_added'],
+				'order_status' => $result['order_status'],
+				
+			);
+		}
+        
+        
+        
+       
+        $orders_column = array('Order ID', 'Customer Group', 'Customer Name', 'Email', 'Telephone', 'Payment Address', 'Shipping Address', 'Payment Method', 'Shipping Method', 'Total', 'Currency Code', 'Date Added', 'Order Status');
+            
+        $orders[0]=   $orders_column;   
+        
+        foreach($orders_list as $orders_row)
+        {
+            $orders[]=   $orders_row;            
+        }     
+        require_once(DIR_SYSTEM . 'library/excel_xml.php');
+        $xls = new Excel_XML('UTF-8', false, 'Orders List');
+        
+        $xls->addArray($orders);
+        
+        $xls->generateXML('orderslist_'.date('Y-m-d _ H:i:s'));	
+
+	}]]></add>
+		</operation>
+        
+        
+        
+        
+	</file>
+    
+    
+    
+  
+<!-- Model -->
+
+	<file name="admin/model/sale/order.php">
+		<operation>
+			<search position="before" offset="0"><![CDATA[public function getOrders($data = array()) {]]></search>
+			<add><![CDATA[public function getOrdersexport($data = array()) {
+ $sql = "SELECT o.order_id, cgd.name as customer_group, CONCAT(o.firstname, ' ', o.lastname) AS customer_name,
+email, telephone, CONCAT(o.payment_firstname, ' ', o.payment_lastname,',',o.payment_address_1,',',o.payment_address_2,',',o.payment_city,'-',o.payment_postcode) AS payment_address,
+CONCAT(o.shipping_firstname, ' ', o.shipping_lastname,',',o.shipping_address_1,',',o.shipping_address_2,',', o.shipping_city,'-',o.shipping_postcode) AS shipping_address,
+ o.payment_method, o.shipping_method, o.total, o.currency_code,o.currency_value,
+ o.date_added, oos.name as order_status
+FROM `" . DB_PREFIX . "order` o
+LEFT JOIN " . DB_PREFIX . "customer_group_description cgd ON (o.customer_group_id = cgd.customer_group_id)
+LEFT JOIN " . DB_PREFIX . "order_status oos ON (o.order_status_id = oos.order_status_id) WHERE cgd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
+
+		$query = $this->db->query($sql);
+
+		return $query->rows;
+
+	}]]></add>
+		</operation>
+	</file>
+
+<!-- View -->
+
+	<file name="admin/view/template/sale/order_list.tpl">
+		<operation>
+			<search position="replace"><![CDATA[<a onclick="$('#form').attr('action', '<?php echo $invoice; ?>'); $('#form').attr('target', '_blank'); $('#form').submit();" class="button"><?php echo $button_invoice; ?></a>]]></search>
+			<add><![CDATA[<a onclick="$('form').attr('action', '<?php echo $export; ?>'); $('form').submit();" class="button"><?php echo $button_export; ?></a><a onclick="$('#form').attr('action', '<?php echo $invoice; ?>'); $('#form').attr('target', '_blank'); $('#form').submit();" class="button"><?php echo $button_invoice; ?></a>]]></add>
+		</operation>
+	</file>
+	
+</modification>
+
+
+
+

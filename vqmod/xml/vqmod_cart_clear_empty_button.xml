@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+
+	<id>Cart Clear - Empty Button</id>
+	<version>1.0.0</version>
+	<vqmver>2.0.0</vqmver>
+	<author>MojeGalanterka.cz</author>
+
+  <file name="catalog/controller/checkout/cart.php">
+    <operation>
+			<search position="before"><![CDATA[// Remove]]></search>
+			<add><![CDATA[
+    // Add for empty cart button
+		if (isset($this->request->get['empty'])) {
+			$this->cart->clear();
+		}
+      ]]></add>
+		</operation>
+    <operation>
+			<search position="after"><![CDATA[$this->data['button_checkout'] = $this->language->get('button_checkout');]]></search>
+			<add><![CDATA[
+      $this->data['button_empty'] = $this->language->get('button_empty');
+      $this->data['alert_empty']  = $this->language->get('alert_empty');
+      ]]></add>
+		</operation>
+    <operation>
+			<search position="before"><![CDATA[$this->data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');]]></search>
+			                     <add><![CDATA[$this->data['empty'] = str_replace("&amp;", "&", $this->url->link('checkout/cart', 'empty=1', 'SSL') );]]></add>
+		</operation>
+	</file>
+
+	
+  <!-- LANGUAGE -->
+  
+  <file name="catalog/language/russian/checkout/cart.php">    
+    <operation error="skip">
+			<search position="before"><![CDATA[// Column]]></search>
+			<add><![CDATA[
+$_['button_empty']   = 'Очистить корзину';          
+$_['alert_empty']    = 'Вы действительно хотите удалить товар из корзины?';
+      ]]></add>
+		</operation>  
+	</file>
+  
+  <file name="catalog/language/english/checkout/cart.php">    
+    <operation error="skip">
+			<search position="before"><![CDATA[// Column]]></search>
+			<add><![CDATA[
+$_['button_empty']   = 'Empty Cart';
+$_['alert_empty']    = 'Do you realy want to empty your cart?';          
+      ]]></add>
+		</operation>  
+	</file>
+
+  
+  <!-- Template -->
+  
+  <file name="catalog/view/theme/*/template/checkout/cart.tpl">
+    <operation>
+			<search position="after"><![CDATA[<div class="buttons">]]></search>
+			<add><![CDATA[
+    <div class="left"><a onclick="AlertEmpty()" class="button"><?php echo $button_empty; ?></a></div>
+      ]]></add>
+		</operation>
+    <operation>
+			<search position="after"><![CDATA[<script type="text/javascript">]]></search>
+			<add><![CDATA[
+	function AlertEmpty() {
+    var ecart = confirm("<?php echo $alert_empty; ?>");
+    if (ecart == true) { window.location = "<?php echo $empty; ?>"; }
+  } // AlertEmpty 
+      ]]></add>
+		</operation>
+	</file>
+  
+</modification>
