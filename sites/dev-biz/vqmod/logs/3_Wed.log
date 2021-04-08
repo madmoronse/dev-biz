@@ -1,0 +1,25 @@
+---------- Date: 2021-04-07 11:15:25 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /
+VQMod::_parseMods - DOM UNABLE TO LOAD: C:\OS\OpenServer\domains\dev-biz\vqmod/xml/Clear_Cache.xml
+MOD DETAILS:
+   modFile   : C:\OS\OpenServer\domains\dev-biz\vqmod/xml/rearrange_slideshow.xml
+   id        : rearrange slideshow images
+   version   : 0.1
+   vqmver    : 2.1.7
+   author    : Tri Le
+
+File Name    : catalog/model/design/banner.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): "'");
+MOD DETAILS:
+   modFile   : C:\OS\OpenServer\domains\dev-biz\vqmod/xml/vqmm_pav_blogs_menu_shortcut.xml
+   id        : VQMod Pavo Blogs Shortcut
+   version   : 1.0.0
+   vqmver    : 2.3.0
+   author    : pavothemes.com
+
+File Name    : catalog/language/*/common/header.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $_['text_home']           = 'Home';
+
+----------------------------------------------------------------------
+
+
