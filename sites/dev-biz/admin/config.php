@@ -1,11 +1,11 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://test-oc/admin/');
-define('HTTP_CATALOG', 'http://test-oc/');
+define('HTTP_SERVER', 'http://3.142.151.76/admin/');
+define('HTTP_CATALOG', 'http://3.142.151.76/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://test-oc/admin/');
-define('HTTPS_CATALOG', 'http://test-oc/');
+define('HTTPS_SERVER', 'http://3.142.151.76/admin/');
+define('HTTPS_CATALOG', 'http://3.142.151.76/');
 
 // DIR
 define('DIR_APPLICATION', '../admin/');

@@ -1,9 +1,9 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://hive2.thexproject.ru:21120');
+define('HTTP_SERVER', 'http://3.142.151.76/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://hive2.thexproject.ru:21120');
+define('HTTPS_SERVER', 'http://3.142.151.76/');
 
 // DIR
 define('DIR_APPLICATION', 'catalog/');
