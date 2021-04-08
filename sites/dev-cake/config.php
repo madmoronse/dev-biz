@@ -7,7 +7,7 @@ define(DIR_CONTROLLER, 'controllers/');
 define(DIR_MODEL, 'models/');
 
 
-define(DB_HOST, 'localhost');
+define(DB_HOST, 'mysql');
 define(DB_NAME, 'cakes');
 define(DB_USER, 'root');
-define(DB_PASS, '');
+define(DB_PASS, 'devpass');
