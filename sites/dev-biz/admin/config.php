@@ -1,7 +1,7 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://3.137.63.202:85/admin/');
-define('HTTP_CATALOG', 'http://3.137.63.202:85/');
+define('HTTP_SERVER', 'http://3.137.63.202/admin/');
+define('HTTP_CATALOG', 'http://3.137.63.202/');
 
 // HTTPS
 define('HTTPS_SERVER', 'http://3.142.151.76/admin/');
