@@ -1,12 +1,9 @@
 <?php
 // Version
 define('VERSION', '1.5.5.1.2');
-// ini_set('display_errors', 0);
-// ini_set('display_startup_errors', 0);
+ini_set('display_errors', 0);
+ini_set('display_startup_errors', 0);
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 include(__DIR__ . '/neos_debug/_includes/neosfactory.php');
 include('debug.php');
 require_once(__DIR__ . '/ab_tests/SimpleABTest.php');
