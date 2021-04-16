@@ -527,6 +527,8 @@ $ostatok_dney = ceil($ostatok_vremeni / $interval_dney);
     <?php } ?>
     <?php } ?>
 <!--<li><a href="sotrudnichestvo">Работа&nbsp;с&nbsp;Outmax</a></li>-->
+<li><a href="bonusnaya_programma.html">Бонусная программа</a></li>
+<li><a href="partnerskaya_programma.html">Реферальная система</a></li>
 <li><a href="about">О&nbsp;нас</a></li>
 <!--<li style="padding:0;border:none;"><a href="http://bizoutmax.ru/index.php?route=product/category&path=7607_11111" style="background:#5bc74f;padding: 18px 15px 19px 15px;line-height:16px;color:#fff;text-shadow:none;">Бестселлеры</a></li>-->
 <!--<li style="padding:0;border:none;"><a href="super-rasprodazha" style="background:#ea242c;padding: 18px 15px 19px 15px;line-height:16px;color:#fff;text-shadow:none;">Ликвидация</a></li>-->
