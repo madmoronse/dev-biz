@@ -9,7 +9,6 @@
 	<div style="width:100%;max-width:1200px;margin:0 auto;">
 		<div class="column">
 			<ul>
-			<li><a href="/index.php?route=calc/calc">Расчет стоимости доставки</a></li>
 			<?php foreach ($informations as $information) { ?>
 			<li><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
 			<?php } ?>
