@@ -1,5 +1,4 @@
 <?php
-// HTTP
 define('HTTP_SERVER', 'http://dev-projects.site/');
 
 // HTTPS
