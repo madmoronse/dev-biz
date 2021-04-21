@@ -287,12 +287,6 @@ $('#button-quote').live('click', function() {
 						for (j in json['shipping_method'][i]['quote']) {
 							html += '<tr class="highlight cart-calc">';
 
-							if (json['shipping_method'][i]['quote'][j]['code'] == '<?php echo $shipping_method; ?>') {
-								html += '<td style="display: none;"><input type="radio" name="shipping_method" value="' + json['shipping_method'][i]['quote'][j]['code'] + '" id="' + json['shipping_method'][i]['quote'][j]['code'] + '" checked="checked" /></td>';
-							} else {
-								html += '<td style="display: none;"><input type="radio" name="shipping_method" value="' + json['shipping_method'][i]['quote'][j]['code'] + '" id="' + json['shipping_method'][i]['quote'][j]['code'] + '" /></td>';
-							}
-
 							html += '  <td><label for="' + json['shipping_method'][i]['quote'][j]['code'] + '">' + json['shipping_method'][i]['quote'][j]['title'] + '</label></td>';
 							html += '  <td style="text-align: right; border-right: 1px solid #bedafd;"><label for="' + json['shipping_method'][i]['quote'][j]['code'] + '">' + json['shipping_method'][i]['quote'][j]['text'] + '</label></td>';
 							html += '</tr>';
