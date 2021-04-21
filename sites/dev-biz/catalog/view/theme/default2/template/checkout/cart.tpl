@@ -239,7 +239,7 @@ $('#button-quote').live('click', function() {
 	$.ajax({
 		url: 'index.php?route=checkout/cart/quote',
 		type: 'post',
-		data: 'country_id=' + $('select[name=\'country_id\']').val() + '&zone_id=' + $('select[name=\'zone_id\']').val() + '&city=' +encodeURIComponent ($('input[name=\'city\']').val()) + '&address_1=' + encodeURIComponent($('input[name=\'address_1\']').val()) + '&postcode=' + encodeURIComponent($('input[name=\'postcode\']').val()),
+		data: 'country_id=' + $('select[name=\'country_id\']').val() + '&zone_id=' + $('select[name=\'zone_id\']').val() + '&city=' +encodeURIComponent($('input[name=\'city\']').val()) + '&address_1=' + encodeURIComponent($('input[name=\'address_1\']').val()) + '&postcode=' + encodeURIComponent($('input[name=\'postcode\']').val()),
 		dataType: 'json',
 		beforeSend: function() {
 			$('#button-quote').attr('disabled', true);
