@@ -1,2 +1,0 @@
-[2020-10-09 13:38:58] {"uri":"\/index.php?route=checkoutf\/confirm\/add_image","files":{"uploadfile":{"name":"1.jpg","type":"image\/jpeg","tmp_name":"C:\\OS\\OpenServer\\userdata\\php_upload\\phpA499.tmp","error":0,"size":312264}},"request":{"route":"checkoutf\/confirm\/add_image"}}
-[2020-12-18 07:38:06] {"uri":"\/index.php?route=checkoutf\/confirm\/add_image","files":{"uploadfile":{"name":"2.jpg","type":"image\/jpeg","tmp_name":"C:\\OS\\OpenServer\\userdata\\php_upload\\php1F16.tmp","error":0,"size":258585}},"request":{"route":"checkoutf\/confirm\/add_image"}}
