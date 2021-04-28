@@ -15,7 +15,7 @@ $QUERY.='  <order number="'.$number.'"/>'.PHP_EOL;
 $QUERY.='</deleterequest>';
 
 
-$REQUEST_URL='https://integration.cdek.ru/status_report_h.php';
+$REQUEST_URL='https://integration.cdek.ru/delete_orders.php';
 
 
 $REQUEST_METHOD='POST';
