@@ -18,7 +18,7 @@ foreach ($info as $arr) {
     foreach ($arr as $number) {
 $QUERY.='<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'.PHP_EOL;
 $QUERY.='<deleterequest number="123" ordercount="1" account="'.$ACCOUNT.'" date="'.$BYPASS_DATE.'" secure="'.$SECURE.'">'.PHP_EOL;
-$QUERY.='  <order number="'.$number.'"/>'.PHP_EOL;
+$QUERY.='  <order DispatchNumber="1232952223" number="'.$number.'"/>'.PHP_EOL;
 $QUERY.='</deleterequest>';
 
 
