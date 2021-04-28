@@ -3,7 +3,7 @@ $BYPASS_DATE	= date('Y-m-d',time());							// текущая дата обход
 
 $QUERY		= '';
 
-$track = '1205660608';
+$track = '1246009871';
 
 $ACCOUNT	= 'PaUmnSqLrNkfWqStciyXfzggbTrYlySO';					// боевой
 $SECURE		= md5($BYPASS_DATE.'&dNM0Bu9NCHWWOnbVsU5cotaf9pbWbPi9');		// боевой
