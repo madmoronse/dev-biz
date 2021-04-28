@@ -30,7 +30,7 @@ $SECURE		= md5($BYPASS_DATE.'&dNM0Bu9NCHWWOnbVsU5cotaf9pbWbPi9');		// боево
 
 foreach ($info as $number) {
 $QUERY.='<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'.PHP_EOL;
-$QUERY.='<deleterequest number="123" ordercount="10" account="'.$ACCOUNT.'" date="'.$BYPASS_DATE.'" secure="'.$SECURE.'">'.PHP_EOL;
+$QUERY.='<deleterequest number="123" ordercount="1" account="'.$ACCOUNT.'" date="'.$BYPASS_DATE.'" secure="'.$SECURE.'">'.PHP_EOL;
 $QUERY.='  <order number="'.$number.'"/>'.PHP_EOL;
 $QUERY.='</deleterequest>';
 
