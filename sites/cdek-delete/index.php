@@ -12,7 +12,7 @@ $SECURE		= md5($BYPASS_DATE.'&dNM0Bu9NCHWWOnbVsU5cotaf9pbWbPi9');		// боево
 $QUERY.='<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'.PHP_EOL;
 $QUERY.='<deleterequest number="" ordercount="1" account="'.$ACCOUNT.'" date="'.$BYPASS_DATE.'" secure="'.$SECURE.'">'.PHP_EOL;
 $QUERY.='  <order number="'.$number.'"/>'.PHP_EOL;
-$QUERY.='</StatusReport>';
+$QUERY.='</deleterequest>';
 
 
 $REQUEST_URL='https://integration.cdek.ru/status_report_h.php';
