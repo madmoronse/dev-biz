@@ -6,7 +6,6 @@ $QUERY		= '';
 $track = '1206037889';
 
 $info = array(
-'004100',
 '00087564',
 '29952',
 '24768',
@@ -50,7 +49,7 @@ $data = curl_exec($request);
 
 $array_data = simplexml_load_string($data);
 
-curl_close($request);	// рвём соединение
+//curl_close($request);	// рвём соединение
 
 echo "<pre>";
 print_r($array_data);
