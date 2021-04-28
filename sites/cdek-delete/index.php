@@ -9,7 +9,7 @@ $number = '86046';
 $ACCOUNT	= 'PaUmnSqLrNkfWqStciyXfzggbTrYlySO';					// боевой
 $SECURE		= md5($BYPASS_DATE.'&dNM0Bu9NCHWWOnbVsU5cotaf9pbWbPi9');		// боевой
 
-$QUERY.='<?xml version="1.0" encoding="UTF-8"?>'.PHP_EOL;
+$QUERY.='<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'.PHP_EOL;
 $QUERY.='<deleterequest number="" ordercount="1" account="'.$ACCOUNT.'" date="'.$BYPASS_DATE.'" secure="'.$SECURE.'">'.PHP_EOL;
 $QUERY.='  <order number="'.$number.'"/>'.PHP_EOL;
 $QUERY.='</StatusReport>';
